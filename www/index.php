@@ -14,8 +14,9 @@
 
         <!-- Goiburukoa -->
         <link rel="icon" type="image/icon"  href="favicon.ico">
+        <title>WikiLatex</title>
     </head>
     <body>
-        <h1>Hola mundo!</h1>
+        <h1>Kaixo mundua!</h1>
     </body>
 </html>
