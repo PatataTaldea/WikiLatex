@@ -18,5 +18,6 @@
     </head>
     <body>
         <h1>Kaixo mundua!</h1>
+        <p>Ongi etorri gure web orrira!</p>
     </body>
 </html>
