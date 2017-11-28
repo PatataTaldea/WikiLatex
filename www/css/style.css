@@ -4,6 +4,10 @@
     src: url('../fonts/cmunbi.ttf') format('truetype');
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .menua {
     margin: 0px; 
     width: 15%; 
