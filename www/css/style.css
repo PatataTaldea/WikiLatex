@@ -1,0 +1,25 @@
+
+#menua {
+    margin: 0px; 
+    padding: 0px; 
+    width: 15%; 
+    float: left; 
+    height: 100%;
+    background-color: #d9d9d9;
+}
+
+#nabigazioa {
+    margin: 0px; 
+    padding: 0px; 
+    width: 85%; 
+    float: right;
+}
+
+#orria {
+    float: right;
+    width: 85%;
+    margin-top: 130px;
+    padding-left: 40px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
