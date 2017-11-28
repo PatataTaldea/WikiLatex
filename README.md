@@ -6,7 +6,7 @@ baita tutorial eta gida batzuk ere.
 
 ### Artikuluen egitura:
 
-Artikulua
+1. Artikulua
     - Izenburua
     - Hitz-gakoak
         - Hitz1
