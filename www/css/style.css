@@ -25,7 +25,6 @@ body {
 }
 
 #orria {
-    font-family: LaTeX;
     float: right;
     width: 85%;
     margin-top: 130px;
@@ -38,6 +37,7 @@ body {
 @media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
     .menua {
         display: none;
+        width: 0%;
     }
 
     #nabigazioa {
@@ -46,5 +46,8 @@ body {
 
     #orria {
         padding-left: 0px;
+        margin-left: 30px;
+        width: 100%;
+        float: none;
     }
 }
