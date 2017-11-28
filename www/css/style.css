@@ -23,3 +23,18 @@
     padding-right: 30px;
     margin-bottom: 20px;
 }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    #menua {
+        display: none;
+    }
+
+    #nabigazioa {
+        width: 100%;
+    }
+
+    #orria {
+        padding-left: 0px;
+    }
+}
