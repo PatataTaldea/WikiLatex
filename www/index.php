@@ -9,6 +9,7 @@
         <script src="js/script.js"></script>
 
         <!-- CSS -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -17,7 +18,23 @@
         <title>WikiLatex</title>
     </head>
     <body>
-        <h1>Kaixo mundua!</h1>
-        <p>Ongi etorri gure web orrira</p>
+
+        <div class="fixed-top">
+
+        <nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Navbar</span>
+</nav>
+
+        <div>
+        <nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+        </div>
+        </div>
+
     </body>
 </html>
