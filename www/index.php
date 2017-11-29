@@ -1,6 +1,14 @@
 <?php
     // Sesioa hasi
     session_start();
+
+    //$_SESSION['index'] = 'Patata'; 
+
+    if (isset($_GET['logout'])){
+        session_unset(); 
+        session_destroy();
+        session_start();
+    }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,14 +36,20 @@
             <!-- Goiko barra -->
             <nav class="navbar navbar-dark bg-dark w3-card">
                 <span class="navbar-brand mb-0 h1 w3-xlarge">WikiLatex</span>
-                <form class="form-inline">
+                <form>
+                <!-- -->
+                <!-- -->
                     <?php 
                     // Logeatuta dagoen begiratu, bahiezkoa bada bere erabiltzailea erakutsi, bestela botoia
                     if (isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']==true) 
                     { 
-                        echo '<span class="text-info">'.$_SESSION['erabiltzailea'].'</span>';
+                        echo '<span class="text-secondary">'.$_SESSION['erabiltzailea'].'</span>';
+                        ?>
+                        <a class="btn text-info bg-dark my-2 my-sm-0" href="index.php?logout=true">Atera</a>
+                        
+                        <?php
                     } else { ?>
-                    <a class="btn text-info bg-dark my-2 my-sm-0" onclick="">Sartu / Erregistratu</a>
+                    <a class="btn text-info bg-dark my-2 my-sm-0" href="login.php">Sartu / Erregistratu</a>
                     <?php } ?>
 
                 </form>
@@ -54,7 +68,7 @@
                 <div id="nabigazioa">
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol id="nabigazioa_lista" class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Home<?php echo $_SESSION['index'];?></a></li>
                             <li class="breadcrumb-item active" aria-current="page">Library</li>
                         </ol>
                     </nav>  
@@ -96,6 +110,7 @@
             
             <span>
             <?php 
+
             if(file_exists('../sailist.html')) {
                 $data = file('../sailist.html');
                 foreach($data as $dat){

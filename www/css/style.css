@@ -33,6 +33,24 @@ body {
     margin-bottom: 20px;
 }
 
+#page {
+    margin-top: 130px;
+}
+
+.register-form .tituloa{
+    width: 65%;
+    float: left;
+}
+
+.register-form button{
+    width: 35%;
+    float: right;
+}
+
+.login button{
+    vertical-align: right;
+}
+
 /* Tamaina txikiko pantailetan, mugikorrak adibidez */
 @media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
     .menua {
