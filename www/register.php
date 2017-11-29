@@ -3,22 +3,6 @@
     session_start();
     require 'config.php';
 
-    // Konprobatu kredentzialak
-    if (isset($_POST['email']) && isset($_POST['pasahitza'])){
-        $erabiltzaileak = simplexml_load_file(ERABILTZAILEAK) or die("Error: Cannot create object");
-        $erab = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".$_POST['email']."']");
-        
-        $username = substr($erab[0]->username,0);
-        $email = substr($erab[0]->email,0);
-        $password = substr($erab[0]->password,0);
-
-        if ($_POST['email'] == $email && $_POST['pasahitza'] == $password) {
-            $_SESSION['erabiltzailea'] = $username;
-            $_SESSION['erab_email'] = $email;
-            $_SESSION['logeatuta'] = true;
-        }       
-    }
-
     // Begiratu iadanik logeatuta dagoen
     if (isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']==true) {
         header('Location: '.INDEX);
@@ -66,34 +50,33 @@
                     ?>
                 </div>
                 <div class="col-sm-10 col-md-8 col-lg-4">
-                    <h2>Sartu:</h2>
-                    <form class="login" onsubmit="login.php" method="post">
+                <h2>Erregistratu:</h2>
+                    <form>
+                        <span>Erabiltzaile izena</span>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">@</span>
+                            <input id="username" type="text" class="form-control" placeholder="Erabiltzaile izena" aria-label="Erabiltzaile izena" aria-describedby="basic-addon1">
+                        </div>
+                        <br>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Emaila</label>
-                            <input name="email" type="email" class="form-control <?php if($erab == NULL && isset($_POST['email'])) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sartu emaila">
+                            <label for="input_email">Emaila</label>
+                            <input name="email" type="email" class="form-control" id="input_email" aria-describedby="emailHelp" placeholder="Sartu emaila">
                             <small id="emailHelp" class="form-text text-muted">Ez dugu inorekin zure emaila partekatuko.</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Pasahitza</label>
-                            <input name="pasahitza" type="password" class="form-control <?php if($erab != NULL) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputPassword1" placeholder="Pasahitza">
+                            <label for="input_password1">Pasahitza</label>
+                            <input name="pasahitza" type="password" class="form-control" id="input_password1" placeholder="Pasahitza">
                         </div>
-                        <button type="submit" class="btn btn-dark btn-sm">Bidali</button>
-                        <?php 
-                        if (isset($error) && $error == true) {
-                            ?>
-                            <span class="text-danger float-right">
-                                Errorea erabiltzaile edo pasahitzan.
-                            </span>
-                            <?php
-                        }
-                        ?>
+                        <div class="form-group">
+                            <label for="input_password2">Errepikatu pasahitza</label>
+                            <input name="pasahitza" type="password" class="form-control" id="input_password2" placeholder="Errepikatu pasahitza">
+                        </div>
+                        <button type="button" class="btn btn-dark btn-sm" onclick="erregistratu();">Bidali</button>
+                        <span id="error_alert" class="text-danger float-right"></span>
                     </form>
-
-                    <hr>
-
-                    <div class="register-form">
-                        <h5 class="tituloa">Ez duzu konturik?</h5>
-                        <a type="button" class="btn btn-secondary btn-sm" href="<?php echo REGISTER;?>">Erregistratu</a>
+                    <br>
+                    <div id="response_alert" class="alert alert-primary" role="alert" style="display: none">
+                        This is a primary alert—check it out!
                     </div>
                 </div>
                 <div class="col-sm-1 col-md-2 col-lg-4">

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <erabiltzaileak>
-  <erabiltzaile id="e0">
+  <erabiltzaile>
     <username>Oscar</username>
     <email>osainz59@gmail.com</email>
     <password>patata</password>
   </erabiltzaile>
-</erabiltzaileak> 
+  <erabiltzaile>
+    <username>Patata</username>
+    <email>patata@gmail.com</email>
+    <password>patata</password>
+  </erabiltzaile>
+  <erabiltzaile>
+    <username>Patata2</username>
+    <email>patata2@gmail.com</email>
+    <password>patata</password>
+  </erabiltzaile>
+</erabiltzaileak>
