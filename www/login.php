@@ -70,12 +70,12 @@
                     <form class="login" onsubmit="login.php" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Emaila</label>
-                            <input name="email" type="email" class="form-control <?php if($erab == NULL && isset($_POST['email'])) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sartu emaila">
+                            <input name="email" type="email" class="form-control <?php if(isset($erab) && $erab == NULL && isset($_POST['email'])) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sartu emaila">
                             <small id="emailHelp" class="form-text text-muted">Ez dugu inorekin zure emaila partekatuko.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Pasahitza</label>
-                            <input name="pasahitza" type="password" class="form-control <?php if($erab != NULL) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputPassword1" placeholder="Pasahitza">
+                            <input name="pasahitza" type="password" class="form-control <?php if(isset($erab) && $erab != NULL) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputPassword1" placeholder="Pasahitza">
                         </div>
                         <button type="submit" class="btn btn-dark btn-sm">Bidali</button>
                         <?php 
