@@ -1,6 +1,7 @@
 <?php
     // Sesioa hasi
     session_start();
+    require 'config.php';
 
     //$_SESSION['index'] = 'Patata'; 
 
@@ -45,11 +46,11 @@
                     { 
                         echo '<span class="text-secondary">'.$_SESSION['erabiltzailea'].'</span>';
                         ?>
-                        <a class="btn text-info bg-dark my-2 my-sm-0" href="index.php?logout=true">Atera</a>
+                        <a class="btn text-info bg-dark my-2 my-sm-0" href="?logout=true">Atera</a>
                         
                         <?php
                     } else { ?>
-                    <a class="btn text-info bg-dark my-2 my-sm-0" href="login.php">Sartu / Erregistratu</a>
+                    <a class="btn text-info bg-dark my-2 my-sm-0" href="<?php echo LOGIN; ?>">Sartu / Erregistratu</a>
                     <?php } ?>
 
                 </form>

@@ -63,7 +63,8 @@
             <div class="row">
                 <div class="col-sm-1 col-md-4">
                     <?php
-                        // Pruebak egiteko lekua jeje
+                        
+
                     ?>
                 </div>
                 <div class="col-sm-10 col-md-4">
@@ -71,14 +72,23 @@
                     <form class="login" onsubmit="login.php" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Emaila</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sartu emaila">
+                            <input name="email" type="email" class="form-control <?php if($erab == NULL && isset($_POST['email'])) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sartu emaila">
                             <small id="emailHelp" class="form-text text-muted">Ez dugu inorekin zure emaila partekatuko.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Pasahitza</label>
-                            <input name="pasahitza" type="password" class="form-control" id="exampleInputPassword1" placeholder="Pasahitza">
+                            <input name="pasahitza" type="password" class="form-control <?php if($erab != NULL) {echo 'is-invalid'; $error = true;} ?>" id="exampleInputPassword1" placeholder="Pasahitza">
                         </div>
                         <button type="submit" class="btn btn-dark btn-sm">Bidali</button>
+                        <?php 
+                        if (isset($error) && $error == true) {
+                            ?>
+                            <span class="text-danger">
+                                Errorea erabiltzaile edo pasahitzan.
+                            </span>
+                            <?php
+                        }
+                        ?>
                     </form>
 
                     <hr>
