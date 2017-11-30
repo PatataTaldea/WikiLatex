@@ -12,4 +12,22 @@
     <password>patata</password>
     <type>user</type>
   </erabiltzaile>
+  <erabiltzaile>
+    <username>abvcd</username>
+    <email>patata@gmail.es</email>
+    <password>patata</password>
+    <type>user</type>
+  </erabiltzaile>
+  <erabiltzaile>
+    <username>asdfas</username>
+    <email>a@gmail.com</email>
+    <password>patata</password>
+    <type>user</type>
+  </erabiltzaile>
+  <erabiltzaile>
+    <username>abvc</username>
+    <email>abcd@gmail.com</email>
+    <password>patata</password>
+    <type>user</type>
+  </erabiltzaile>
 </erabiltzaileak>

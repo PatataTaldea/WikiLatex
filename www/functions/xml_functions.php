@@ -1,7 +1,7 @@
 
 <?php
 
-require '../config.php';
+require_once '../config.php';
 
 function save_formated(&$simpleXmlObject, $path){
     
