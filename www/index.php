@@ -36,24 +36,17 @@
             <!-- Goiko barra -->
             <nav class="navbar navbar-dark bg-dark w3-card">
                 <span class="navbar-brand mb-0 h1 w3-xlarge">WikiLatex</span>
-                <!-- -->
-                <!-- -->
                     <?php 
-                    // Logeatuta dagoen begiratu, bahiezkoa bada bere erabiltzailea erakutsi, bestela botoia
                     if (isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']==true) 
                     { 
-                        //echo '<span class="text-secondary">'.$_SESSION['erabiltzailea'].'</span>';
                         ?>
-                        <!--<a class="btn text-info bg-dark my-2 my-sm-0" href="?logout=true">Atera</a>-->
-                        
-
-
                         <div class="dropdown">
                             <button class="btn text-info bg-dark dropdown-toggle font-weight-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <?php echo $_SESSION['erab_email']; ?>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Aginte panela</a>
+                            <a class="dropdown-item" href="<?php echo INDEX?>">Sarrera</a>
+                                <a class="dropdown-item" href="<?php echo SETTINGS?>">Aginte panela</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?logout=true">Atera</a>
                             </div>

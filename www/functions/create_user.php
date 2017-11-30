@@ -11,14 +11,14 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pasahit
     if($erab == NULL) {
         $erab=$erabiltzaileak->addChild('erabiltzaile');
         $erab->addChild('username',$_POST['username']);
-        $erab->addChild('email',$_POST['email']);
+        $erab->addChild('email',strtolower($_POST['email']));
         $erab->addChild('password',$_POST['pasahitza']);
 
         save_formated($erabiltzaileak, "../".ERABILTZAILEAK);
 
 
         $_SESSION['erabiltzailea'] = $_POST['username'];
-        $_SESSION['erab_email'] = $_POST['email'];
+        $_SESSION['erab_email'] = strtolower($_POST['email']);
         $_SESSION['logeatuta'] = true;
 
         echo '0';

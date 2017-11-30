@@ -6,7 +6,7 @@
     // Konprobatu kredentzialak
     if (isset($_POST['email']) && isset($_POST['pasahitza'])){
         $erabiltzaileak = simplexml_load_file(ERABILTZAILEAK) or die("Error: Cannot create object");
-        $erab = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".$_POST['email']."']");
+        $erab = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".strtolower($_POST['email'])."']");
         
         $username = substr($erab[0]->username,0);
         $email = substr($erab[0]->email,0);
