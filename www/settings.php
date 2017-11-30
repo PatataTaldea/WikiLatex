@@ -12,7 +12,6 @@
     $erabiltzaileak = simplexml_load_file(ERABILTZAILEAK) or die("Error: Cannot create object");
     $erab = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".$_SESSION['erab_email']."']");
 
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,6 +31,11 @@
         <!-- Goiburukoa -->
         <link rel="icon" type="image/icon"  href="favicon.ico">
         <title>WikiLatex</title>
+        <script>
+            <?php
+                echo 'loadUserData(\''.$_SESSION['erabiltzailea'].'\',\''.$_SESSION['erab_email'].'\',\''.$_SESSION['erab_type'].'\');';
+            ?>
+        </script>
     </head>
     <body>
 
@@ -39,8 +43,6 @@
             <!-- Goiko barra -->
             <nav class="navbar navbar-dark bg-dark w3-card">
                 <span class="navbar-brand mb-0 h1 w3-xlarge">WikiLatex</span>
-                
-
                 <div class="dropdown">
                     <button class="btn text-info bg-dark dropdown-toggle font-weight-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <?php echo $_SESSION['erab_email']; ?>
@@ -56,13 +58,33 @@
             </nav>
         </div>
 
-        <div id="page" class="container">
+        <div id="page" class="container-fluid">
             <div class="row">
-                <div class="col-sm-1 col-md-2 col-lg-4">
+                <div class="col-sm-1 col-md-2 col-lg-2" id="settings_left_menu">
                 </div>
-                <div class="col-sm-10 col-md-8 col-lg-4">
+                <div class="col-sm-10 col-md-8 col-lg-8" id="settings_content_page">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" href="#">Orokorra</button>
+                    </li>
+                    <?php
+                    if (isset($_SESSION['erab_type']) && $_SESSION['erab_type'] == "admin"){
+                    ?>
+                    <li class="nav-item">
+                        <button class="nav-link btn-outline-info" href="#">Admin</button>
+                    </li>
+                    <?php
+                    }
+                    ?>
+                    <li class="nav-item">
+                        <button class="nav-link btn-outline-info" href="#">Nire aportazioak</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link btn-outline-info disabled" href="#">Disabled</button>
+                    </li>
+                </ul>
                 </div>
-                <div class="col-sm-1 col-md-2 col-lg-4">
+                <div class="col-sm-1 col-md-2 col-lg-2">
                 </div>
                 
             </div>

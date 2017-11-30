@@ -11,10 +11,12 @@
         $username = substr($erab[0]->username,0);
         $email = substr($erab[0]->email,0);
         $password = substr($erab[0]->password,0);
+        $type = substr($erab[0]->type,0);
 
         if ($_POST['email'] == $email && $_POST['pasahitza'] == $password) {
             $_SESSION['erabiltzailea'] = $username;
             $_SESSION['erab_email'] = $email;
+            $_SESSION['erab_type'] = $type;
             $_SESSION['logeatuta'] = true;
         }       
     }

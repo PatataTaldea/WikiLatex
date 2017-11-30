@@ -1,3 +1,10 @@
+// settings.php
+function loadUserData(erabiltzailea, erab_email, erab_type) {
+    ERAB_USERNAME = erabiltzailea;
+    ERAB_EMAIL = erab_email;
+    ERAB_TYPE = erab_type;
+}
+
 
 // register.php
 function validateEmail(email) {
@@ -49,8 +56,6 @@ function erregistratu() {
                 
             }
         }
-    
-        // Zerbitzariari itxoin nahi diogu, beraz false
         xhttp.open("POST", "functions/create_user.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("username="+username.value+"&email="+email.value+"&pasahitza="+pasahitza1.value);
@@ -60,3 +65,4 @@ function erregistratu() {
     }
 
 }
+
