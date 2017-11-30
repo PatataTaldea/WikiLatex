@@ -38,7 +38,10 @@ function erregistratu() {
                     email.disabled = true;
                     pasahitza1.disabled = true;
                     pasahitza2.disabled = true;
-                } else{
+                } else if(erantzuna == 3){
+                    response_alert.class = "alert alert-danger";
+                    response_alert.innerHTML = "Erabiltzaile izenaren tamaina desegokia 4 eta 10 karaktereen artean.";
+                }else{
                     response_alert.class = "alert alert-danger";
                     response_alert.innerHTML = "Dagoeneko existitzen da email berdina duen erabiltzailea.";
                 }
