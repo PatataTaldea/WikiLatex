@@ -19,7 +19,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pasahit
         $erab->addChild('username',$_POST['username']);
         $erab->addChild('email',$_POST['email']);
         $erab->addChild('password',$_POST['pasahitza']);
-        $erab->addChild('type','user');
+        $erab->addChild('type','user'); 
 
         save_formated($erabiltzaileak, "../".ERABILTZAILEAK);
 

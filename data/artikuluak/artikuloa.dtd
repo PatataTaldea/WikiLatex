@@ -1,0 +1,1 @@
+<!ELEMENT artikuloa (izenburua, hitzgakoak, saila, argazkiak, )>
