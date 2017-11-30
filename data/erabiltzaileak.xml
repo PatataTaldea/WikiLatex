@@ -6,4 +6,10 @@
     <password>patata</password>
     <type>admin</type>
   </erabiltzaile>
+  <erabiltzaile>
+    <username>abcd</username>
+    <email>patata@gmail.com</email>
+    <password>patata</password>
+    <type>user</type>
+  </erabiltzaile>
 </erabiltzaileak>
