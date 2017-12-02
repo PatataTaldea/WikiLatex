@@ -21,6 +21,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <script src="js/script.js"></script>
+        <script src="js/settings_script.js"></script>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -33,11 +34,11 @@
         <title>WikiLatex</title>
         <script>
             <?php
-                echo 'loadUserData(\''.$_SESSION['erabiltzailea'].'\',\''.$_SESSION['erab_email'].'\',\''.$_SESSION['erab_type'].'\');';
+                echo 'kargatuErabiltzaileDatuak(\''.$_SESSION['erabiltzailea'].'\',\''.$_SESSION['erab_email'].'\',\''.$_SESSION['erab_type'].'\');';
             ?>
         </script>
     </head>
-    <body>
+    <body onload="hasieratuSettings()">
 
         <div class="fixed-top">
             <!-- Goiko barra -->
@@ -63,26 +64,36 @@
                 <div class="col-sm-1 col-md-2 col-lg-2" id="settings_left_menu">
                 </div>
                 <div class="col-sm-10 col-md-8 col-lg-8" id="settings_content_page">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <button class="nav-link active" href="#">Orokorra</button>
-                    </li>
-                    <?php
-                    if (isset($_SESSION['erab_type']) && $_SESSION['erab_type'] == "admin"){
-                    ?>
-                    <li class="nav-item">
-                        <button class="nav-link btn-outline-info" href="#">Admin</button>
-                    </li>
-                    <?php
-                    }
-                    ?>
-                    <li class="nav-item">
-                        <button class="nav-link btn-outline-info" href="#">Nire aportazioak</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link btn-outline-info disabled" href="#">Disabled</button>
-                    </li>
-                </ul>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <button id="btn-orokorra" class="nav-link active" onclick="kargatuOrria('orokorra')">Orokorra</button>
+                        </li>
+                        <?php
+                        if (isset($_SESSION['erab_type']) && $_SESSION['erab_type'] == "admin"){
+                        ?>
+                        <li class="nav-item">
+                            <button id="btn-admin" class="nav-link btn-outline-info" onclick="kargatuOrria('admin')">Admin</button>
+                        </li>
+                        <?php
+                        }
+                        ?>
+                        <li class="nav-item">
+                            <button id="btn-artikuloak" class="nav-link btn-outline-info" onclick="kargatuOrria('artikuloak')">Artikuloak</button>
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1 col-lg-3 col-xl-3">
+                        </div>
+                        <div class="col-sm-10 col-md-8 col-lg-6 col-xl-6">
+                            <div class="container" id="tab-content">
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-1 col-lg-3 col-xl-3">
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="col-sm-1 col-md-2 col-lg-2">
                 </div>

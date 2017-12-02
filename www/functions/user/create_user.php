@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require '../config.php';
-require 'xml_functions.php';
+require '../../config.php';
+require '../xml_functions.php';
 
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pasahitza'])){
 
@@ -11,7 +11,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pasahit
         exit;
     } 
 
-    $erabiltzaileak = simplexml_load_file("../".ERABILTZAILEAK) or die("Error: Cannot create object");
+    $erabiltzaileak = simplexml_load_file("../../".ERABILTZAILEAK) or die("Error: Cannot create object");
     $erab = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".$_POST['email']."']");
 
     if($erab == NULL) {
@@ -21,11 +21,13 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pasahit
         $erab->addChild('password',$_POST['pasahitza']);
         $erab->addChild('type','user'); 
 
-        save_formated($erabiltzaileak, "../".ERABILTZAILEAK);
+        save_formated($erabiltzaileak, "../../".ERABILTZAILEAK);
 
 
         $_SESSION['erabiltzailea'] = $_POST['username'];
         $_SESSION['erab_email'] = $_POST['email'];
+        $_SESSION['erab_pass'] = $_POST['pasahitza'];
+        $_SESSION['erab_type'] = "user";
         $_SESSION['logeatuta'] = true;
 
         echo '0';
