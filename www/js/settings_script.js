@@ -216,8 +216,10 @@ function datuakOndoBeteta(){
 
     if (pass_zaharra.value == "" || pass_berria1.value == "" || pass_berria2.value == "" || pass_berria1.value != pass_berria2.value ){
         btn_pass_bidali.className = "btn btn-info float-right disabled";
+        //btn_pass_bidali.disabled = "true";
     } else {
         btn_pass_bidali.className = "btn btn-info float-right";
+        //btn_pass_bidali.disabled = "false";
     }
     if (pass_berria1.value != pass_berria2.value && pass_berria2.value != ""){
         pass_berria2.className = "form-control border-danger";
@@ -243,6 +245,13 @@ function aldatuPasahitza(){
     var alert_emaitza = document.getElementById('aldaketaEmaitzaAlert');
 
     alert_emaitza.style.display = "none";
+
+    if (pass_zaharra.value == "" || pass_berria1.value == "" || pass_berria2.value == "" || pass_berria1.value != pass_berria2.value ){
+        alert_emaitza.innerText = "Ez daude eremu guztiak beteta.";
+        alert_emaitza.className = "alert alert-info";
+        alert_emaitza.style.display = "block";
+        return 1;
+    }
 
     var xhttp = null;
     if (window.XMLHttpRequest) {
