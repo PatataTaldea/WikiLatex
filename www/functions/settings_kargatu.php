@@ -26,22 +26,25 @@ if (isset($_POST['orria']) && $_POST['orria'] == "orokorra") {
 
 <div class="collapse" id="collapsePasahitza">
     <div class="card card-body">
-    <form>
-        <div class="form-group">
-            <label for="pasahitzZaharraInput">Pasahitz zaharra:</label>
-            <input type="password" class="form-control" id="pasahitzZaharraInput" placeholder="Pasahitz zaharra">
-        </div>
-        <div class="form-group">
-            <label for="pasahitzBerria1Input">Pasahitz berria:</label>
-            <input type="password" class="form-control" id="pasahitzBerria1Input" placeholder="Pasahitz berria">
-        </div>
-        <div class="form-group">
-        <input type="password" class="form-control" id="pasahitzBerria2Input" placeholder="Pasahitz berria errepikatu">
-        </div>
-        <button type="button" class="btn btn-info float-right disabled" id="pasahitzaBidaliBtn" onclick="aldatuPasahitza()">Bidali</button>
-    </form>
-        
-   </div>
+        <form>
+            <div class="form-group">
+                <label for="pasahitzZaharraInput">Pasahitz zaharra:</label>
+                <input type="password" class="form-control" id="pasahitzZaharraInput" placeholder="Pasahitz zaharra">
+            </div>
+            <div class="form-group">
+                <label for="pasahitzBerria1Input">Pasahitz berria:</label>
+                <input type="password" class="form-control" id="pasahitzBerria1Input" placeholder="Pasahitz berria">
+            </div>
+            <div class="form-group">
+            <input type="password" class="form-control" id="pasahitzBerria2Input" placeholder="Pasahitz berria errepikatu">
+            </div>
+            <button type="button" class="btn btn-info float-right disabled" id="pasahitzaBidaliBtn" onclick="aldatuPasahitza()">Bidali</button>
+        </form>
+    </div>
+    <br>
+    <div id="aldaketaEmaitzaAlert" class="alert" role="alert" style="display: none;">
+        This is a success alert—check it out!
+    </div>
 </div>
 
 <?php

@@ -1,10 +1,31 @@
 // settings.php
+
+
+/*
+ *  Erabiltzailearen datuak gordetzen ditu pasahitza izan ezik.
+ * 
+ *  @params: String erabiltzailea Erabiltzailearen izena
+ *           String erab_email Erabiltzailearen emaila
+ *           String erab_type Erabiltzaile mota user/admin
+ * 
+ *  @return: void
+ * 
+ */
 function kargatuErabiltzaileDatuak(erabiltzailea, erab_email, erab_type) {
     ERAB_USERNAME = erabiltzailea;
     ERAB_EMAIL = erab_email;
     ERAB_TYPE = erab_type;
 }
 
+/*
+ *  Settings orria hasieratzen du. HTML elementuen instantzia gordetzen ditu
+ *  eta defektuzko orria kargatzen du.
+ * 
+ *  @params: void
+ *
+ *  @return: void
+ * 
+ */
 function hasieratuSettings() {
 
     tab_content = document.getElementById('tab-content');
@@ -20,6 +41,14 @@ function hasieratuSettings() {
 
 } 
 
+/*
+ *  Atzitu nahi den orria eskatu eta gertaerak kargatu.
+ * 
+ *  @params: String orria Atzitu nahi den orriaren izena.
+ * 
+ *  @return: void
+ * 
+ */
 function kargatuOrria( orria ){
     if (UNEKO_ORRIA != orria) {
         switch(orria){
@@ -49,6 +78,15 @@ function kargatuOrria( orria ){
     }
 }
 
+/*
+ *  Kargatu nahi den orriaren AJAX eskaera zerbitzariari. Eskaeraren
+ *  emaitza jasotzean pantailarazten da idatziOrria() funtzioarekin.
+ * 
+ *  @params: String orria Atzitu nahi den orriaren izena.
+ * 
+ *  @return: void
+ * 
+ */
 function eskatuOrria( orria ){
     var xhttp = null;
     if (window.XMLHttpRequest) {
@@ -79,6 +117,17 @@ function eskatuOrria( orria ){
     xhttp.send("orria="+orria);
 }
 
+/*
+ *  Kargatu nahi den orria idazten du dagokion HTML-eko div etiketan
+ *  eta AURREKO_ORRIA eta UNEKO_ORRIA egoera aldagai globalak eguneratzen
+ *  ditu.
+ * 
+ *  @params: String orria Atzitu nahi den orriaren izena.
+ *           HTML html Orriaren edukiaren html kodea.
+ * 
+ *  @return: void
+ * 
+ */
 function idatziOrria(orria, html) {
     tab_content.innerHTML = html;
     AURREKO_ORRIA = UNEKO_ORRIA;
@@ -87,6 +136,15 @@ function idatziOrria(orria, html) {
     aldatuNabigazioa();
 }
 
+/*
+ *  Settings orriko nabigazioaren CSS-a eguneratzen du, lehio aldaketa
+ *  egon dela ikusteko.
+ * 
+ *  @params: void
+ * 
+ *  @return: void
+ * 
+ */
 function aldatuNabigazioa(){
     switch (AURREKO_ORRIA) {
         case 'orokorra':
@@ -110,6 +168,14 @@ function aldatuNabigazioa(){
     }
 }
 
+/*
+ *  Uneko orriaren gertaerak kargatu.
+ * 
+ *  @params: String orria Atzitu nahi den orriaren izena.
+ * 
+ *  @return: void
+ * 
+ */
 function kargatuOrrikoGertaerak( orria ){
 
     switch(orria){
@@ -133,6 +199,15 @@ function kargatuOrrikoGertaerak( orria ){
     
 }
 
+/*
+ *  Settings-eko 'orokorra' orriaren gertaera. Pasahitza aldatzeko formularioan
+ *  dagoen gertaerak. Input-en koloreak aldatzeko egoeraren arabera.
+ * 
+ *  @params: void
+ * 
+ *  @return: void
+ * 
+ */
 function datuakOndoBeteta(){
     var pass_zaharra = document.getElementById('pasahitzZaharraInput');
     var pass_berria1 = document.getElementById('pasahitzBerria1Input');
@@ -151,11 +226,23 @@ function datuakOndoBeteta(){
     }
 }
 
+/*
+ *  Pasahitza aldatzeko AJAX eskaera. Zerbitzariari bidaltzen dio pasahitza
+ *  aldatzeko eskaera eta emaitza pantailarazten du.
+ * 
+ *  @params: String orria Atzitu nahi den orriaren izena.
+ * 
+ *  @return: void
+ * 
+ */
 function aldatuPasahitza(){
     var pass_zaharra = document.getElementById('pasahitzZaharraInput');
     var pass_berria1 = document.getElementById('pasahitzBerria1Input');
     var pass_berria2 = document.getElementById('pasahitzBerria2Input');
     var btn_pass_bidali = document.getElementById('pasahitzaBidaliBtn');
+    var alert_emaitza = document.getElementById('aldaketaEmaitzaAlert');
+
+    alert_emaitza.style.display = "none";
 
     var xhttp = null;
     if (window.XMLHttpRequest) {
@@ -167,8 +254,34 @@ function aldatuPasahitza(){
     } 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('settings_left_menu').innerHTML = this.responseText;
-            console.log(this.responseText);
+            var erantzuna = parseInt(this.response);
+            switch(erantzuna) {
+                case 0:
+                    alert_emaitza.innerText = "Pasahitza ondo aldatu da.";
+                    alert_emaitza.className = "alert alert-success";
+                    alert_emaitza.style.display = "block";
+                    pass_zaharra.disabled = "true";
+                    pass_berria1.disabled = "true";
+                    pass_berria2.disabled = "true";
+                    btn_pass_bidali.disabled = "true";
+                    break;
+                case 1:
+                    alert_emaitza.innerText = "Jasotako pasahitz zaharra ez dator bat erabiltzailearen pasahitzarekin.";
+                    alert_emaitza.className = "alert alert-danger";
+                    alert_emaitza.style.display = "block";
+                    break;
+                case 2:
+                    alert_emaitza.innerText = "Jasotako pasahitz berria zaharraren berdina da.";
+                    alert_emaitza.className = "alert alert-danger";
+                    alert_emaitza.style.display = "block";
+                    break;
+                case 3:
+                    console.log('Sartutako datu kopurua ez da egokia.');
+                    break;
+                case 4:
+                    console.log('Sesioa ez dago irekita.');
+                    break;
+            }
         }
     }
     xhttp.open("POST", "functions/user/edit_user.php", false);

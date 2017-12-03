@@ -35,7 +35,7 @@ if (isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']) {
             $pass = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".$_SESSION['erab_email']."']/password");
         
             $pass[0][0] = $_POST['pass_b'];
-            $_SESSION['erab:pass'] = $_POST['pass_b'];
+            $_SESSION['erab_pass'] = $_POST['pass_b'];
         
             save_formated($erabiltzaileak, "../../".ERABILTZAILEAK);
         
