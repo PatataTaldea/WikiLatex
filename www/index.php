@@ -45,7 +45,7 @@
                                 <?php echo $_SESSION['erab_email']; ?>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="<?php echo INDEX?>">Sarrera</a>
+                                <a class="dropdown-item" href="<?php echo INDEX?>">Sarrera</a>
                                 <a class="dropdown-item" href="<?php echo SETTINGS?>">Aginte panela</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?logout=true">Atera</a>
@@ -110,18 +110,6 @@
                 </div>
             </div>
 
-            
-            <span>
-            <?php 
-
-            if(file_exists('../sailist.html')) {
-                $data = file('../sailist.html');
-                foreach($data as $dat){
-                    echo $dat;
-                }
-            }
-            ?>
-            </span>
         </div>
         
     </body>
