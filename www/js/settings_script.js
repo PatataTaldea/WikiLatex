@@ -133,6 +133,10 @@ function idatziOrria(orria, html) {
     AURREKO_ORRIA = UNEKO_ORRIA;
     UNEKO_ORRIA = orria;
 
+    if (orria == "artikuluak") {
+        
+    }
+
     aldatuNabigazioa();
 }
 
