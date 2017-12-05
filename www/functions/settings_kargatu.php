@@ -90,12 +90,12 @@ if (isset($_POST['orria']) && $_POST['orria'] == "orokorra") {
                     <td><a href="<?php echo $actual_link?>"><?php echo $actual_link?></a></td>
                 </tr>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">2</th>
                     <td>Matrizeak</td>
                     <td><a href="<?php echo $actual_link?>"><?php echo $actual_link?></a></td>
                 </tr>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">3</th>
                     <td>Formulak</td>
                     <td><a href="<?php echo $actual_link?>"><?php echo $actual_link?></a></td>
                     </tr>
@@ -106,6 +106,55 @@ if (isset($_POST['orria']) && $_POST['orria'] == "orokorra") {
 <div class="col-sm-1 col-md-2 col-lg-1 col-xl-1">
 </div>
 
+<?php
+} else if (isset($_POST['orria']) && $_POST['orria'] == "admin") {
+?>
+<div class="col-sm-1 col-md-2 col-lg-2 col-xl-2" id="ezkerreko-menua">
+</div>
+<div class="col-sm-10 col-md-18 col-lg-8 col-xl-8">
+    <div class="container" id="tab-content">
+        <table class="table">
+            <thead class="thead">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Izenburua</th>
+                <th scope="col">Aukera</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="col-1" scope="row">1</th>
+                    <td class="col-7">Ikur matematikoak</td>
+                    <td class="col-4">
+                        <button type="button" class="btn btn-info"><i class="fa fa-search"></i></button>
+                        <button type="button" class="btn btn-success">&#10003;</button>
+                        <button type="button" class="btn btn-danger">&#9587;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row">2</th>
+                    <td class="col-7">Matrizeak</td>
+                    <td class="col-4">
+                        <button type="button" class="btn btn-info"><i class="fa fa-search"></i></button>
+                        <button type="button" class="btn btn-success">&#10003;</button>
+                        <button type="button" class="btn btn-danger">&#9587;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row">3</th>
+                    <td class="col-7">Ekuazioak</td>
+                    <td class="col-4">
+                        <button type="button" class="btn btn-info"><i class="fa fa-search"></i></button>
+                        <button type="button" class="btn btn-success">&#10003;</button>
+                        <button type="button" class="btn btn-danger">&#9587;</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-sm-1 col-md-2 col-lg-2 col-xl-2">
+</div>
 <?php
 }
 ?>

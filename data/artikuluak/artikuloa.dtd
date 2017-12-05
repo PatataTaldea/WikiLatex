@@ -1,1 +1,1 @@
-<!ELEMENT artikuloa (izenburua, hitzgakoak, saila, argazkiak, )>
+<!ELEMENT artikuloa (izenburua, hitzgakoak, saila, idazlea, textua)>
