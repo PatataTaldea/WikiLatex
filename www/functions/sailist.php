@@ -5,7 +5,7 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
 
 ?>
 
-<h1>Laguntzarako artikuluak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-outline-primary" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
+<h1>Ekuazioak - artikuluak <button type="button" class="btn btn-outline-primary" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
     
 <?php
 foreach($data->artikuloa as $artikuloa){
