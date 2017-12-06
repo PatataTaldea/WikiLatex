@@ -1,9 +1,31 @@
 // register.php
+
+/*
+ *  Email bat baliozkoa den edo ez esaten duen funtzioa.
+ * 
+ *  @params: String email aztertu nahi dugun emaila.
+ * 
+ *  @return: true baliozko emaila da.
+ *           false ez da baliozko email bat.
+ * 
+ */
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
 
+/*
+ *  Erabiltzaile berri bat erregistratzeko prozedura. Prozedura
+ *  honetan AJAX eskaera bat erabiltzen da zerbitzariak bestelako lana 
+ *  egin dezan. Sarrerako balioak document aldagai globaletik hartuko ditu.
+ *  Irteera bezela HTML dokumentua eguneratzen du erregistroaren emaitzaz
+ *  berri emanez eta index-era eramaten du erabiltzailea jadanik logeatuta.
+ * 
+ *  @params: void
+ * 
+ *  @return: void
+ * 
+ */
 function erregistratu() {
 
     var xhttp = null;
@@ -16,7 +38,10 @@ function erregistratu() {
 
     error.innerHTML = "";
 
+    // Begiratu ea emaila baliozkoa den
     if (validateEmail(email.value) && pasahitza1.value == pasahitza2.value ){
+
+        // Sortu AJAX eskaera
         if (window.XMLHttpRequest) {
             // code for modern browsers
             xhttp = new XMLHttpRequest();
@@ -25,6 +50,7 @@ function erregistratu() {
             xhttp = new ActiveXObject("Microsoft.XMLHTTP");
         } 
     
+        // Erantzuna tratatu
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var erantzuna = parseInt(this.response)
@@ -44,10 +70,10 @@ function erregistratu() {
                     response_alert.class = "alert alert-danger";
                     response_alert.innerHTML = "Dagoeneko existitzen da email berdina duen erabiltzailea.";
                 }
-                
-                
             }
         }
+
+        // AJAX eskeara osatu eta bidali
         xhttp.open("POST", "functions/user/create_user.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("username="+username.value+"&email="+email.value+"&pasahitza="+pasahitza1.value);
