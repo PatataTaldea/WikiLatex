@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artikuloak>
+    <artikuloa>
+        <izenburua>Alfa</izenburua>
+        <saila>Ikur matematikoak</saila>
+        <hitzgakoak>
+            <hitza>alfa</hitza>
+            <hitza>a</hitza>
+            <hitza>ikurra</hitza>
+            <hitza>ikur</hitza>
+            <hitza>matematikoa</hitza>
+        </hitzgakoak>
+        <idazlea>osainz59@gmail.com</idazlea>
+        <idazlea_izena>osainz59</idazlea_izena>
+        <textua>/Ikur\ matematikoak/Alfa.html</textua>
+    <artikuloa>
+    <artikuloa>
+        <izenburua>Omega</izenburua>
+        <saila>Ikur matematikoak</saila>
+        <hitzgakoak>
+            <hitza>omega</hitza>
+            <hitza>w</hitza>
+            <hitza>ikurra</hitza>
+            <hitza>ikur</hitza>
+            <hitza>matematikoa</hitza>
+        </hitzgakoak>
+        <idazlea>osainz59@gmail.com</idazlea>
+        <idazlea_izena>osainz59</idazlea_izena>
+        <textua>/Ikur\ matematikoak/Omega.html</textua>
+    <artikuloa>
+</artikuloak>
