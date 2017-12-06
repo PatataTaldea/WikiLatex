@@ -8,5 +8,6 @@ define("SETTINGS", "settings.php");
 
 // Datuak
 define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
+define("ARTIKULUAK", "../data/artikuluak/index.xml");
 
 ?>

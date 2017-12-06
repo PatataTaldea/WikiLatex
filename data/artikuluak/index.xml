@@ -3,6 +3,7 @@
     <artikuloa>
         <izenburua>Alfa</izenburua>
         <saila>Ikur matematikoak</saila>
+        <deskribapena>Alfa ikurraren artikuloa.</deskribapena>
         <hitzgakoak>
             <hitza>alfa</hitza>
             <hitza>a</hitza>
@@ -13,10 +14,11 @@
         <idazlea>osainz59@gmail.com</idazlea>
         <idazlea_izena>osainz59</idazlea_izena>
         <textua>/Ikur\ matematikoak/Alfa.html</textua>
-    <artikuloa>
+    </artikuloa>
     <artikuloa>
         <izenburua>Omega</izenburua>
         <saila>Ikur matematikoak</saila>
+        <deskribapena>Omega ikurraren artikuloa.</deskribapena>
         <hitzgakoak>
             <hitza>omega</hitza>
             <hitza>w</hitza>
@@ -27,5 +29,5 @@
         <idazlea>osainz59@gmail.com</idazlea>
         <idazlea_izena>osainz59</idazlea_izena>
         <textua>/Ikur\ matematikoak/Omega.html</textua>
-    <artikuloa>
+    </artikuloa>
 </artikuloak>

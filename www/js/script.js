@@ -84,3 +84,41 @@ function erregistratu() {
 
 }
 
+// index.php
+
+function idatziOrria( orria_izena ){
+    var orria = document.getElementById('orria');
+    var nabigazioa = document.getElementById('nabigazioa');
+    var xhttp = null;
+
+    // Sortu AJAX eskaera
+    if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xhttp = new XMLHttpRequest();
+     } else {
+        // code for old IE browsers
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+
+    // Erantzuna tratatu
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            orria.innerHTML = this.responseText;
+            var nabigazioa_html = '' +
+                        '<nav aria-label="breadcrumb" role="navigation">' +
+                        '<ol id="nabigazioa_lista" class="breadcrumb">' +
+                        '<li class="breadcrumb-item"><a href="index.php">Home</a></li>' +
+                        '<li class="breadcrumb-item active" aria-current="page">' + orria_izena +'</li>' +
+                        '</ol>' + 
+                        '</nav> ';
+            nabigazioa.innerHTML = nabigazioa_html;
+        }
+    }
+
+    // AJAX eskeara osatu eta bidali
+    xhttp.open("GET", "functions/sailist.php", true);
+    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+
+}
+
