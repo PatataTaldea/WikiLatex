@@ -8,7 +8,36 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
 <?php 
 } else if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
   ?>
-    <h1>KONTAKTUAAAAAAAAAAAA</h1>
+  <div class="card-group">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="assets/img/patatafri.png" alt="Oskar">
+      <div class="card-body">
+        <h4 class="card-title">Oskar maisua</h4>
+        <p class="card-text">Munduko garatzailerik bikainena.</p>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="assets/img/mai.png" alt="Maite">
+      <div class="card-body">
+        <h4 class="card-title">Maitechan</h4>
+        <p class="card-text">Patxirekin urtebetez entrenatu ondoren Latex maisu bihurtu zen.</p>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="assets/img/isa.png" alt="Isabel">
+      <div class="card-body">
+        <h4 class="card-title">Isachan</h4>
+        <p class="card-text">Hacker-ninja-precure bat.</p>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="assets/img/bibury.png" alt="Egoitz">
+      <div class="card-body">
+        <h4 class="card-title">Egonichan</h4>
+        <p class="card-text">Gauzak aldrebesten dituen mutiko xelebrea.</p>
+      </div>
+    </div>
+  </div>
 <?php 
 } else {
   ?>
