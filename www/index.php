@@ -83,11 +83,11 @@
                                 ?>
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item"><a href="#"><?php echo $artikuloa[0]->saila; ?></a></li>
-                                    <li class="breadcrumb-item"><a href="#"><?php echo $artikuloa[0]->izenburua; ?></a></li>
+                                    <li class="breadcrumb-item active"><?php echo $artikuloa[0]->izenburua; ?></li>
                                 <?php
                             } else {
                                 ?>
-                                    <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">Home</li>
                                 <?php
                             }
                              ?>
