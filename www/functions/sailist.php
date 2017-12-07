@@ -1,13 +1,23 @@
 <?php
 require '../config.php';
 $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
-
-
 ?>
 
-<h1>Ekuazioak eta ikurrak<button type="button" class="btn btn-outline-primary" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
-    
+<?php 
+  if (isset($_GET('saila')) && $_GET('saila')=='HOME') {
+  ?>
+    <h1>HOMEEEEEEEEEEEEEEEEE</h1>
+<?php 
+} else if (isset($_GET('saila')) && $_GET('saila')=='Kontaktua') {
+  ?>
+    <h1>KONTAKTUAAAAAAAAAAAA</h1>
+<?php 
+} else {
+  ?>
+    <h1>Ekuazioak eta ikurrak<button type="button" class="btn btn-outline-primary" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
 <?php
+  }
+  
 foreach($data->artikuloa as $artikuloa){
   ?>
 <div class="list-group" onclick="console.log('patata');">

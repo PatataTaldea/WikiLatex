@@ -116,7 +116,7 @@ function idatziOrria( orria_izena ){
     }
 
     // AJAX eskeara osatu eta bidali
-    xhttp.open("GET", "functions/sailist.php", true);
+    xhttp.open("GET", "functions/sailist.php?saila="+orria_izena, true);
     //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 
