@@ -87,6 +87,7 @@ function erregistratu() {
 // index.php
 
 function idatziOrria( orria_izena ){
+    
     var orria = document.getElementById('orria');
     var nabigazioa = document.getElementById('nabigazioa');
     var xhttp = null;
@@ -116,7 +117,7 @@ function idatziOrria( orria_izena ){
     }
 
     // AJAX eskeara osatu eta bidali
-    xhttp.open("GET", "functions/sailist.php", true);
+    xhttp.open("GET", "functions/sailist.php?saila="+orria_izena, true);
     //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 

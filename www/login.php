@@ -25,7 +25,7 @@
             
     }
 
-    // Begiratu iadanik logeatuta dagoen
+    // Begiratu jadanik logeatuta dagoen
     if (isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']==true) {
         header('Location: '.INDEX);
         die();
