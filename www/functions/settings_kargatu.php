@@ -1,4 +1,5 @@
 <?php
+require '../config.php';
 session_start();
 
 
@@ -58,14 +59,14 @@ if (isset($_POST['orria']) && $_POST['orria'] == "orokorra") {
 <?php
 } else if (isset($_POST['orria']) && $_POST['orria'] == "artikuloak") {
 
-    //$artikuluak = lortuErabiltzailearenArtikuluak($_SESSION['erabiltzailea']);
-    $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $artikuloak = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
+    $artikuloa = $artikuloak->xpath("/artikuloak/artikuloa[idazlea='".$_SESSION['erab_email']."']");
 ?>
 <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3" id="ezkerreko-menua">
     <ul class="list-group w-md-50 p-3 mx-auto">
         <li class="list-group-item d-flex justify-content-between align-items-center">
         Artikulo kopurua:
-        <span id="erab_izena"><?php echo 0; ?></span>
+        <span id="erab_izena"><?php echo sizeof($artikuloa); ?></span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
         Sortu berria:
@@ -84,21 +85,20 @@ if (isset($_POST['orria']) && $_POST['orria'] == "orokorra") {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Ikur matematikoak</td>
-                    <td><a href="<?php echo $actual_link?>"><?php echo $actual_link?></a></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Matrizeak</td>
-                    <td><a href="<?php echo $actual_link?>"><?php echo $actual_link?></a></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Formulak</td>
-                    <td><a href="<?php echo $actual_link?>"><?php echo $actual_link?></a></td>
-                    </tr>
+                <?php 
+                    $i = 0;
+                    foreach($artikuloa as $arti) {
+                        $i = $i +1;
+                        $helbidea = ROOTPATH . INDEX . "?artikuloa=$arti->izenburua";
+                        ?>
+                        <tr>
+                            <th scope="row"><?php echo $i;?></th>
+                            <td><?php echo $arti->izenburua;?></td>
+                            <td><a href="<?php echo $helbidea?>"><?php echo $helbidea?></a></td>
+                        </tr>
+                        <?php
+                    }
+                ?>
             </tbody>
         </table>
     </div>

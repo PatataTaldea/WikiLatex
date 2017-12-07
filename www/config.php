@@ -12,6 +12,7 @@ define("ARTIKULUAK", "../data/artikuluak/index.xml");
 
 // Karpetak
 define("ARTIKULUAK_KARPETA", "../data/artikuluak/");
+define('ROOTPATH', (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . substr(substr(__FILE__, strlen(realpath($_SERVER['DOCUMENT_ROOT']))), 0, - strlen(basename(__FILE__))));
 
 // Erroreak
 define("ERROR_404", "error/404.html");
