@@ -10,6 +10,11 @@
         session_destroy();
         session_start();
     }
+
+    if (isset($_GET['artikuloa'])) {
+        $artikuloak = simplexml_load_file(ARTIKULUAK) or die("Error: Cannot create object");
+        $artikuloa = $artikuloak->xpath("/artikuloak/artikuloa[izenburua='".$_GET['artikuloa']."']");
+    }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -72,8 +77,19 @@
                 <div id="nabigazioa">
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol id="nabigazioa_lista" class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            <?php
+                            if (isset($artikuloa) && $artikuloa != NULL) {
+                                ?>
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#"><?php echo $artikuloa[0]->saila; ?></a></li>
+                                    <li class="breadcrumb-item"><a href="#"><?php echo $artikuloa[0]->izenburua; ?></a></li>
+                                <?php
+                            } else {
+                                ?>
+                                    <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                                <?php
+                            }
+                             ?>
                         </ol>
                     </nav>  
                 </div>
@@ -84,7 +100,16 @@
 
         <!-- Orria -->
         <div id="orria" class="container-fluid">
-
+            <?php 
+                if (isset($artikuloa) && $artikuloa != NULL) {
+                    $helbidea = preg_replace('/\s+/', '_', $artikuloa[0]->saila . "/" . $artikuloa[0]->izenburua . ".html");
+                    $html = file_get_contents(ARTIKULUAK_KARPETA . $helbidea);
+                    echo $html;
+                } else if (isset($artikuloa) && $artikuloa == NULL) {
+                    $html = file_get_contents(ERROR_404);
+                    echo $html;
+                }
+            ?>
         </div>
         
     </body>

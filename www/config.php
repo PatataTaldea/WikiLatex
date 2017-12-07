@@ -10,4 +10,10 @@ define("SETTINGS", "settings.php");
 define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
 define("ARTIKULUAK", "../data/artikuluak/index.xml");
 
+// Karpetak
+define("ARTIKULUAK_KARPETA", "../data/artikuluak/");
+
+// Erroreak
+define("ERROR_404", "error/404.html");
+
 ?>
