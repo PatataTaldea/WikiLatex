@@ -87,6 +87,7 @@ function erregistratu() {
 // index.php
 
 function idatziOrria( orria_izena ){
+    
     var orria = document.getElementById('orria');
     var nabigazioa = document.getElementById('nabigazioa');
     var xhttp = null;

@@ -1,9 +1,7 @@
 <?php
 require '../config.php';
 $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
-?>
-
-<?php 
+  
   if (isset($_GET['saila']) && $_GET['saila']=='HOME') {
   ?>
     <h1>HOMEEEEEEEEEEEEEEEEE</h1>
