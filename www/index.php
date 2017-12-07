@@ -70,7 +70,7 @@
                     <div id="menu_lista" class="w3-bar-block">
                         <button class="w3-bar-item w3-button" onclick="">HOME</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Ekuazioak')">Ekuazioak</button>
-                        <button class="w3-bar-item w3-button" onclick="">Sinboloak</button>
+                        <button class="w3-bar-item w3-button" onclick="">Proba///Sinboloak</button>
                         <button class="w3-bar-item w3-button" onclick="">Etc</button>
                     </div> 
                 </div>
