@@ -4,7 +4,17 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
   
   if (isset($_GET['saila']) && $_GET['saila']=='HOME') {
   ?>
-    <h1>HOMEEEEEEEEEEEEEEEEE</h1>
+    <div class="alert alert-warning" role="alert">
+      <p class="mb-0">OHARRA: Webgunea oraindik beta egoeran dago eta ez dago osaturik. Barkatu eragozpenak.</p>
+    </div>
+    <div class="alert alert-info" role="alert">
+      <h1 class="alert-heading">Ongi etorri WIKILATEXera!<img src="assets/img/LaTeX_logo.png" height="150" width="450" class="rounded float-right" alt="..."></h1>
+      <p>Webgune honetan Latex erabiltzean lagungarri izango zaizkizun gauza interesgarri asko topatuko dituzu!</p>
+      <p>Oraindik ez badakizu nondik hasi, sakatu nabigazio barran ageri diren botoiak.</p>
+      <p>Saltseatu pixka bat gure webgunean!</p>
+      <hr>
+      <p class="mb-0">>>> Zalantzarik baduzu jarri kontaktuan gurekin.</p>
+    </div>
 <?php 
 } else if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
   ?>
@@ -53,7 +63,7 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
 <?php 
 } else {
   ?>
-    <h1>Ekuazioak eta ikurrak<button type="button" class="btn btn-outline-primary" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
+    <h1>Ekuazioak, funtzioak, ikurrak eta abar<button type="button" class="btn btn-outline-primary" style="float: right;" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
 
 <?php
     foreach($data->artikuloa as $artikuloa){
