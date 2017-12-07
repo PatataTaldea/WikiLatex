@@ -55,19 +55,19 @@ function erregistratu() {
             if (this.readyState == 4 && this.status == 200) {
                 var erantzuna = parseInt(this.response)
                 console.log(erantzuna);
-                response_alert.style = ""; ;
+                response_alert.style = "";
                 if (erantzuna == 0 ){
-                    response_alert.class = "alert alert-success"; 
+                    response_alert.className = "alert alert-success"; 
                     response_alert.innerHTML = "Ondo erregistratu zara!";
 
                     email.disabled = true;
                     pasahitza1.disabled = true;
                     pasahitza2.disabled = true;
                 } else if(erantzuna == 3){
-                    response_alert.class = "alert alert-danger";
+                    response_alert.className = "alert alert-danger";
                     response_alert.innerHTML = "Erabiltzaile izenaren tamaina desegokia 4 eta 10 karaktereen artean.";
                 }else{
-                    response_alert.class = "alert alert-danger";
+                    response_alert.className = "alert alert-danger";
                     response_alert.innerHTML = "Dagoeneko existitzen da email berdina duen erabiltzailea.";
                 }
             }
