@@ -16,18 +16,19 @@
 */
 
 session_start();
-require '../../config.php';
-require '../xml_functions.php';
+require '../config.php';
+require 'xml_functions.php';
 
-if (isset($_POST['data']) ){
+if (isset($_POST['editor']) ){
 
+	$artikuluak=simplexml_load_file('../'.EZ_ARTIKULUAK) or die("Error: Cannot create object");
 
-	$artikuluak=simplexml_load_file('../../data/ez_ebaluatuak.xml') or die("Error: Cannot create object");
 	$berria=$artikuluak->addChild('artikuloa');
+
 	
-	$berria->addChild('idazlea_izena',_SESION['erabiltzailea']);
-	$berria->addChild('idazlea',_SESION['erab_email']);
-	$berria->addChild('textua',$_POST['data']);
+	$berria->addChild('idazlea_izena',$_SESION['erabiltzailea']);
+	$berria->addChild('idazlea',$_SESION['erab_email']);
+	//$berria->addChild('textua',$_POST['data']);
 	
 
     echo '0';
