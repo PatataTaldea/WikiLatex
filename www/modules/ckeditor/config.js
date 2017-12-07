@@ -10,6 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.resize_maxWidth = 700;
 	config.resize_maxHeight = 800;
 	config.height = 250;
+	
 	//config.extraPlugins = 'uploadfile'
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
