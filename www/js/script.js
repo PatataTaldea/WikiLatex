@@ -116,10 +116,7 @@ function idatziOrria( orria_izena ){
     }
 
     // AJAX eskeara osatu eta bidali
-    if (orria_izena=="Nondik hasi") xhttp.open("GET", "functions/sarrera.php", true);
-    if (orria_izena=="Funtzioak eta ikurrak") xhttp.open("GET", "functions/sailist.php", true);
-    if (orria_izena=="Galderak") xhttp.open("GET", "functions/galderak.php", true);
-    if (orria_izena=="Kontaktua") xhttp.open("GET", "functions/contact.html", true);
+    xhttp.open("GET", "functions/sailist.php?saila="+orria_izena, true);
     //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 
