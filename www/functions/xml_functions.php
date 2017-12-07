@@ -31,4 +31,10 @@ function save_formated(&$simpleXmlObject, $path){
     return true;
 }
 
+function lortu_artikuloa($artikuloa){
+    $helbidea = preg_replace('/\s+/', '_', $artikuloa[0]->saila . "/" . $artikuloa[0]->izenburua . ".html");
+    $html = file_get_contents(ARTIKULUAK_KARPETA . $helbidea);
+    return $html;
+}
+
 ?>

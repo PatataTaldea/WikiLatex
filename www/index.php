@@ -2,6 +2,7 @@
     // Sesioa hasi
     session_start();
     require 'config.php';
+    require 'functions/xml_functions.php';
 
     //$_SESSION['index'] = 'Patata'; 
 
@@ -102,9 +103,7 @@
         <div id="orria" class="container-fluid">
             <?php 
                 if (isset($artikuloa) && $artikuloa != NULL) {
-                    $helbidea = preg_replace('/\s+/', '_', $artikuloa[0]->saila . "/" . $artikuloa[0]->izenburua . ".html");
-                    $html = file_get_contents(ARTIKULUAK_KARPETA . $helbidea);
-                    echo $html;
+                    echo lortu_artikuloa($artikuloa);
                 } else if (isset($artikuloa) && $artikuloa == NULL) {
                     $html = file_get_contents(ERROR_404);
                     echo $html;
