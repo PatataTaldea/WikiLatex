@@ -11,6 +11,7 @@ define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
 define("ARTIKULUAK", "../data/artikuluak/index.xml");
 define("IRUZKINAK", "../data/iruzkin.xml");
 define("EZ_ARTIKULUAK", "../data/artikuluak/ez_ebaluatuak.xml");
+define("SAILAK", "../data/artikuluak/sailak.xml");
 
 // Karpetak
 define("ARTIKULUAK_KARPETA", "../data/artikuluak/");

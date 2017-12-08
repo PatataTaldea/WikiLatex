@@ -117,12 +117,39 @@ if (isset($_POST['orria']) && $_POST['orria'] == "orokorra") {
 
     $artikuloak = simplexml_load_file("../".EZ_ARTIKULUAK) or die("Error: Cannot create object");
 ?>
+<div class="row" id="sailak-sortu">
+    <div class="col-sm-1 col-md-2 col-lg-2 col-xl-2">
+    </div>
+    <div class="col-sm-10 col-md-8 col-lg-8 col-xl-8">
+        <h3>Sailak</h3>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="sortuSailaLabel" class="sr-only">Sortu sail berria:</label>
+                <input type="text" readonly class="form-control-plaintext" id="sortuSailaLabel" value="Sortu sail berria:">
+            </div>
+            <div class="form-group mx-sm-3">
+                <label for="sailBerria" class="sr-only">Sail berria</label>
+                <input type="text" class="form-control" id="sailBerria" placeholder="Sailaren izena">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="sortuSaila()">Sortu</button>
+        </form>
+        <br>
+        <div id="sailaSortuEmaitza" class="alert alert-primary" role="alert" style="display: none;">
+            This is a primary alert—check it out!
+        </div>
+
+    </div>
+    <div class="col-sm-1 col-md-2 col-lg-2 col-xl-2">
+    </div>
+</div>
+<hr>
 <div class="row" id="artikulo-aurreikuspena">
 </div>
 <div class="row">
     <div class="col-sm-1 col-md-2 col-lg-2 col-xl-2" id="ezkerreko-menua">
     </div>
-    <div class="col-sm-10 col-md-18 col-lg-8 col-xl-8">
+    <div class="col-sm-10 col-md-8 col-lg-8 col-xl-8">
+        <h3>Artikuloak</h3>
         <div class="container" id="tab-content">
             <table class="table">
                 <thead class="thead">

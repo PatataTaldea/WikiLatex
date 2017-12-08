@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sailak>
-    <saila>Ikur matematikoak</saila>
-    <saila>Nondik hasi</saila>
+  <saila izena="Ikur matematikoak">Ikur matematikoak</saila>
+  <saila izena="Nondik hasi">Nondik hasi</saila>
 </sailak>

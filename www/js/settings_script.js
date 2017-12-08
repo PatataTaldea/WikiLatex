@@ -349,3 +349,53 @@ function artikuloaManeiatu( eragiketa, artikuloa ) {
     xhttp.send();
     console.log(xhttp);
 }
+
+function sortuSaila() {
+
+    var saila = document.getElementById('sailBerria').value;
+    var alert_emaitza = document.getElementById('sailaSortuEmaitza');
+    
+    if (saila == "" || saila.length < 3 || saila.length > 12) {
+        alert_emaitza.style.display = "block";
+        alert_emaitza.className = "alert alert-danger";
+        alert_emaitza.innerHTML = "Sartutako balioa ez da egokia."
+        return 1;
+    }
+    
+    var xhttp = null;
+    if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xhttp = new XMLHttpRequest();
+        } else {
+        // code for old IE browsers
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var erantzuna = parseInt(this.response);
+            switch(erantzuna) {
+                case 0:
+                    alert_emaitza.style.display = "block";
+                    alert_emaitza.className = "alert alert-success";
+                    alert_emaitza.innerHTML = saila + " saila sortu da."
+                    break;
+                case 1:
+                    alert_emaitza.style.display = "block";
+                    alert_emaitza.className = "alert alert-danger";
+                    alert_emaitza.innerHTML = saila + " jadanik existitzen da."
+                    break;
+                case 2:
+                    console.log('Erabiltzaile desegokia.');
+                    window.location.replace('index.php');
+                    break;
+                case 3:
+                    console.log('Sarrera desegokia.');
+                    break;
+            }
+        }
+    }
+    xhttp.open("GET", "functions/sailak/create_sailak.php?saila="+saila, false);
+    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+    console.log(xhttp);
+}
