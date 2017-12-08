@@ -160,7 +160,7 @@ function idatziOrria( orria_izena ){
         
 }
 
-function idatziArtikulua( orria_izena ){
+function idatziArtikulua( orria_izena, orria_saila ){
     
     var orria = document.getElementById('orria');
     var nabigazioa = document.getElementById('nabigazioa');
@@ -183,6 +183,7 @@ function idatziArtikulua( orria_izena ){
                         '<nav aria-label="breadcrumb" role="navigation">' +
                         '<ol id="nabigazioa_lista" class="breadcrumb">' +
                         '<li class="breadcrumb-item"><a href="index.php">Home</a></li>' +
+                        '<li class="breadcrumb-item active" aria-current="page"><a href="functions/sailist.php?saila='+orria_saila+'">'+orria_saila+'</a></li>' +
                         '<li class="breadcrumb-item active" aria-current="page">' + orria_izena +'</li>' +
                         '</ol>' + 
                         '</nav> ';

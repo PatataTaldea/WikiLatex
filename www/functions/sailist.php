@@ -85,7 +85,7 @@ if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
     foreach($data->artikuloa as $artikuloa){
       if ($artikuloa->saila=="Nondik hasi"){
   ?>
-      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->izenburua;?>');">
+      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->izenburua;?>','<?php echo $artikuloa->saila;?>');">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?php echo $artikuloa->izenburua;?></h5>
             <small><?php echo $artikuloa->saila; ?></small>
@@ -103,7 +103,7 @@ if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
     foreach($data->artikuloa as $artikuloa){
       if ($artikuloa->saila!="Nondik hasi"){
   ?>
-      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->izenburua;?>');">
+      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->izenburua;?>','<?php echo $artikuloa->saila;?>');">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?php echo $artikuloa->izenburua;?></h5>
             <small><?php echo $artikuloa->saila; ?></small>

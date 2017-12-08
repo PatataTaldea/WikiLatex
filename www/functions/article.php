@@ -1,6 +1,6 @@
 <?php
 require '../config.php';
-require '../functions/xml_functions.php';
+require_once '../functions/xml_functions.php';
 $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
 $artikuloa = $data->xpath("/artikuloak/artikuloa[izenburua='".$_GET['izenburua']."']")[0];
 
