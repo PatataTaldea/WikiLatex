@@ -93,7 +93,7 @@
                 <!-- Ezkerreko menua -->
                 <div id="menua" class="menua w3-sidebar w3-card">
                     <div id="menu_lista" class="w3-bar-block">
-                        <button class="w3-bar-item w3-button" onclick="idatziOrria('HOME');">HOME</button>
+                        <button class="w3-bar-item w3-button" onclick="location.href='index.php'">HOME</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Nondik hasi');">Nondik hasi</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Ekuazioak');">Ekuazioak</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Galderak');">Galderak</button>
@@ -135,7 +135,17 @@
                     echo $html;
                 }
             ?>
+            <div class="alert alert-warning" role="alert">
+                <p class="mb-0">OHARRA: Webgunea oraindik beta egoeran dago eta ez dago osaturik. Barkatu eragozpenak.</p>
+            </div>
+            <div class="alert alert-info" role="alert">
+                <h1 class="alert-heading">Ongi etorri WIKILATEXera!<img src="assets/img/LaTeX_logo.png" height="150" width="450" class="rounded float-right" alt="..."></h1>
+                <p>Webgune honetan Latex erabiltzean lagungarri izango zaizkizun gauza interesgarri asko topatuko dituzu!<img src="assets/img/homer.gif" class="rounded float-right" alt="..."></p>
+                <p>Oraindik ez badakizu nondik hasi, sakatu nabigazio barran ageri diren botoiak.</p>
+                <p>Saltseatu pixka bat gure webgunean!</p>
+                <hr>
+                <p class="mb-0">>>> Zalantzarik baduzu jarri kontaktuan gurekin posta edo iruzkin bidez.</p>
+            </div> 
         </div>
-        
     </body>
 </html>

@@ -3,21 +3,7 @@ require '../config.php';
 $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
 $data2 = simplexml_load_file("../".IRUZKINAK) or die("Error: Cannot create object");
   
-  if (isset($_GET['saila']) && $_GET['saila']=='HOME') {
-  ?>
-    <div class="alert alert-warning" role="alert">
-      <p class="mb-0">OHARRA: Webgunea oraindik beta egoeran dago eta ez dago osaturik. Barkatu eragozpenak.</p>
-    </div>
-    <div class="alert alert-info" role="alert">
-      <h1 class="alert-heading">Ongi etorri WIKILATEXera!<img src="assets/img/LaTeX_logo.png" height="150" width="450" class="rounded float-right" alt="..."></h1>
-      <p>Webgune honetan Latex erabiltzean lagungarri izango zaizkizun gauza interesgarri asko topatuko dituzu!<img src="assets/img/homer.gif" class="rounded float-right" alt="..."></p>
-      <p>Oraindik ez badakizu nondik hasi, sakatu nabigazio barran ageri diren botoiak.</p>
-      <p>Saltseatu pixka bat gure webgunean!</p>
-      <hr>
-      <p class="mb-0">>>> Zalantzarik baduzu jarri kontaktuan gurekin posta edo iruzkin bidez.</p>
-    </div>
-<?php 
-} else if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
+if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
   ?>
   <div class="card-group">
     <div class="card border-success mb-3" style="width: 20rem;">
