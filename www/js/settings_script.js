@@ -299,6 +299,18 @@ function aldatuPasahitza(){
 
 }
 
+/*
+ *  Artikuloak onartzeko edo baztertzeko arduratzen den 
+ *  AJAX eskaera. Funtzio honek manage_article.php funtzioari
+ *  dei egiten dio eta emaitzaren arabera admin orria eguneratzen 
+ *  du.
+ * 
+ *  @params: String eragiketa Artikuloari aplikatu nahi diogun eragiketa. (onartu/baztertu).
+ *           String artikuloa Artikuloaren izenburua.
+ * 
+ *  @return: void
+ * 
+ */
 function artikuloaManeiatu( eragiketa, artikuloa ) {
 
     var xhttp = null;
