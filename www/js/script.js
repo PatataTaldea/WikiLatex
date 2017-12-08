@@ -192,7 +192,6 @@ function idatziArtikulua( orria_izena ){
 
     // AJAX eskeara osatu eta bidali
     xhttp.open("GET", "functions/article.php?izenburua="+orria_izena, true);
-    //xhttp.open("GET", "ARTIKULUEN_KARPETA"+orria_izena, true);
     //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 

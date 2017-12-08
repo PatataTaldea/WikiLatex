@@ -99,7 +99,7 @@ $data2 = simplexml_load_file("../".IRUZKINAK) or die("Error: Cannot create objec
     foreach($data->artikuloa as $artikuloa){
       if ($artikuloa->saila=="Nondik hasi"){
   ?>
-      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->textua;?>');">
+      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->izenburua;?>');">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?php echo $artikuloa->izenburua;?></h5>
             <small><?php echo $artikuloa->saila; ?></small>
@@ -117,7 +117,7 @@ $data2 = simplexml_load_file("../".IRUZKINAK) or die("Error: Cannot create objec
     foreach($data->artikuloa as $artikuloa){
       if ($artikuloa->saila!="Nondik hasi"){
   ?>
-      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->textua;?>');">
+      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->izenburua;?>');">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?php echo $artikuloa->izenburua;?></h5>
             <small><?php echo $artikuloa->saila; ?></small>

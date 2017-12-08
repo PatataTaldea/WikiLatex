@@ -6,7 +6,7 @@
  * gordeko da artikuloa, onartutzat emanez.
  * 
  * @param: String $_GET['eragiketa'] artikuloari aplikatu nahi diogun eragiketa. (onartu/baztertu)
- *         String $_GET['artikuoa'] artikuloaren izenburua.
+ *         String $_GET['artikuloa'] artikuloaren izenburua.
  *  
  * @return: 0 Dena ondo joan bada artikuloa onartu edo baztertuko du.
  *          1 Sartutako datuak desegokiak dira.
