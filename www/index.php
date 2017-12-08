@@ -95,8 +95,8 @@
                     <div id="menu_lista" class="w3-bar-block">
                         <button class="w3-bar-item w3-button" onclick="location.href='index.php'">HOME</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Nondik hasi');">Nondik hasi</button>
-                        <button class="w3-bar-item w3-button" onclick="idatziOrria('Ekuazioak');">Ekuazioak</button>
-                        <button class="w3-bar-item w3-button" onclick="idatziOrria('Galderak');">Galderak</button>
+                        <button class="w3-bar-item w3-button" onclick="idatziOrria('Algoritmoak');">Algoritmoak</button>
+                        <button class="w3-bar-item w3-button" onclick="idatziOrria('Iruzkinak');">Iruzkinak</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Kontaktua');">Kontaktua</button>
                     </div> 
                 </div>

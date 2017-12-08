@@ -48,7 +48,7 @@ if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
     </div>
   </div>
 <?php 
-} else if (isset($_GET['saila']) && $_GET['saila']=='Galderak') {
+} else if (isset($_GET['saila']) && $_GET['saila']=='Iruzkinak') {
   ?>
     <h1>Esaiguzu zerbait<button type="button" class="btn btn-outline-primary" style="float: right;" onclick="iruzkindu()">Iruzkindu</button></h1>
     <div><table class="table">
@@ -96,7 +96,7 @@ if (isset($_GET['saila']) && $_GET['saila']=='Kontaktua') {
 <?php
       }
     }
-} else if (isset($_GET['saila']) && $_GET['saila']=='Ekuazioak') {
+} else if (isset($_GET['saila']) && $_GET['saila']=='Algoritmoak') {
   ?>
     <h1>Ekuazioak, funtzioak, ikurrak eta abar<button type="button" class="btn btn-outline-primary" style="float: right;" onclick="sortuArtikulua()">Sortu artikulu berri bat</button></h1>
 <?php
