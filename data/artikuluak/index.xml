@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artikuloak>
     <artikuloa>
+        <izenburua>Latex instalazioa</izenburua>
+        <saila>Nondik hasi</saila>
+        <deskribapena>Latex instalatu Windowsen.</deskribapena>
+        <hitzgakoak>
+            <hitza>latex</hitza>
+            <hitza>windows</hitza>
+            <hitza>instalatu</hitza>
+        </hitzgakoak>
+        <idazlea>patxi@gmail.com</idazlea>
+        <idazlea_izena>Patxi</idazlea_izena>
+        <textua>Nondik_hasi/Latex_ins.html</textua>
+    </artikuloa>
+    <artikuloa>
+        <izenburua>Patxi</izenburua>
+        <saila>Galderak</saila>
+        <deskribapena>Patxiren biografia.</deskribapena>
+        <hitzgakoak>
+            <hitza>patxi</hitza>
+            <hitza>p</hitza>
+            <hitza>galdera</hitza>
+        </hitzgakoak>
+        <idazlea>patxi@gmail.com</idazlea>
+        <idazlea_izena>Patxi</idazlea_izena>
+        <textua>Galderak/Patxi.html</textua>
+    </artikuloa>
+    <artikuloa>
         <izenburua>Alfa</izenburua>
         <saila>Ikur matematikoak</saila>
         <deskribapena>Alfa ikurraren artikuloa.</deskribapena>
