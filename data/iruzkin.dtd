@@ -1,0 +1,6 @@
+<!ELEMENT iruzkinak (iruzkin)*>
+<!ELEMENT iruzkin (data, izena, mezua, eposta)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT izena (#PCDATA)>
+<!ELEMENT mezua (#PCDATA)>
+<!ELEMENT eposta (#PCDATA)>

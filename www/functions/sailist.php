@@ -1,6 +1,7 @@
 <?php
 require '../config.php';
 $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
+//$data2 = simplexml_load_file("../".IRUZKINAK) or die("Error: Cannot create object");
   
   if (isset($_GET['saila']) && $_GET['saila']=='HOME') {
   ?>
@@ -76,13 +77,13 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
   <tbody>
 <?php
     $kont = 0;
-    foreach($data->artikuloa as $artikuloa){
+    foreach($data->iruzkin as $iruzkin){
   ?>
     <tr>
       <td><?php echo $kont+1;?></td>
-      <td>Doraemon</td>
-      <td>ありがとうございます</td>
-	    <td>2015/09/03</td>
+      <td><?php echo $iruzkin->izena;?></td>
+      <td><?php echo $iruzkin->mezua;?></td>
+	    <td><?php echo $iruzkin->data;?></td>
     </tr>
 <?php
     $kont = $kont+1;

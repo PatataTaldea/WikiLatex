@@ -9,6 +9,7 @@ define("SETTINGS", "settings.php");
 // Datuak
 define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
 define("ARTIKULUAK", "../data/artikuluak/index.xml");
+define("IRUZKINAK", "../data/iruzkin.xml");
 define("EZ_ARTIKULUAK", "../data/artikuluak/ez_ebaluatuak.xml");
 
 // Karpetak
