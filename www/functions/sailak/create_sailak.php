@@ -15,6 +15,7 @@ if (isset($_SESSION['erab_type']) && $_SESSION['erab_type'] == "admin" ) {
             
             $sailak->addChild("saila",$_GET['saila'])->addAttribute("izena",$_GET['saila']);
             save_formated($sailak, "../../".SAILAK);
+            mkdir("../../".ARTIKULUAK_KARPETA.preg_replace('/\s+/', '_', $_GET['saila']));
 
             echo '0';
 
