@@ -1,33 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artikuloak>
-    <artikuloa>
-        <izenburua>Alfa</izenburua>
-        <saila>Ikur matematikoak</saila>
-        <deskribapena>Alfa ikurraren artikuloa.</deskribapena>
-        <hitzgakoak>
-            <hitza>alfa</hitza>
-            <hitza>a</hitza>
-            <hitza>ikurra</hitza>
-            <hitza>ikur</hitza>
-            <hitza>matematikoa</hitza>
-        </hitzgakoak>
-        <idazlea>osainz59@gmail.com</idazlea>
-        <idazlea_izena>osainz59</idazlea_izena>
-        <textua>/Ikur\ matematikoak/Alfa.html</textua>
-    </artikuloa>
-    <artikuloa>
-        <izenburua>Omega</izenburua>
-        <saila>Ikur matematikoak</saila>
-        <deskribapena>Omega ikurraren artikuloa.</deskribapena>
-        <hitzgakoak>
-            <hitza>omega</hitza>
-            <hitza>w</hitza>
-            <hitza>ikurra</hitza>
-            <hitza>ikur</hitza>
-            <hitza>matematikoa</hitza>
-        </hitzgakoak>
-        <idazlea>osainz59@gmail.com</idazlea>
-        <idazlea_izena>osainz59</idazlea_izena>
-        <textua>/Ikur\ matematikoak/Omega.html</textua>
-    </artikuloa>
+  <artikuloa>
+    <izenburua>Latex instalazioa</izenburua>
+    <saila>Nondik hasi</saila>
+    <deskribapena>Latex instalatu Windowsen.</deskribapena>
+    <hitzgakoak>
+      <hitza>latex</hitza>
+      <hitza>windows</hitza>
+      <hitza>instalatu</hitza>
+    </hitzgakoak>
+    <idazlea>patxi@gmail.com</idazlea>
+    <idazlea_izena>Patxi</idazlea_izena>
+    <textua>Nondik_hasi/Latex_ins.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <izenburua>Patxi</izenburua>
+    <saila>Nondik hasi</saila>
+    <deskribapena>Patxiren biografia.</deskribapena>
+    <hitzgakoak>
+      <hitza>patxi</hitza>
+      <hitza>p</hitza>
+      <hitza>galdera</hitza>
+    </hitzgakoak>
+    <idazlea>patxi@gmail.com</idazlea>
+    <idazlea_izena>Patxi</idazlea_izena>
+    <textua>Nondik_hasi/Patxi.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <izenburua>Alfa</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <deskribapena>Alfa ikurraren artikuloa.</deskribapena>
+    <hitzgakoak>
+      <hitza>alfa</hitza>
+      <hitza>a</hitza>
+      <hitza>ikurra</hitza>
+      <hitza>ikur</hitza>
+      <hitza>matematikoa</hitza>
+    </hitzgakoak>
+    <idazlea>osainz59@gmail.com</idazlea>
+    <idazlea_izena>osainz59</idazlea_izena>
+    <textua>Ikur_matematikoak/Alfa.html</textua>
+  </artikuloa>
 </artikuloak>

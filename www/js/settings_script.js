@@ -298,3 +298,54 @@ function aldatuPasahitza(){
     xhttp.send("pass_z="+pass_zaharra.value+"&pass_b="+pass_berria1.value);
 
 }
+
+/*
+ *  Artikuloak onartzeko edo baztertzeko arduratzen den 
+ *  AJAX eskaera. Funtzio honek manage_article.php funtzioari
+ *  dei egiten dio eta emaitzaren arabera admin orria eguneratzen 
+ *  du.
+ * 
+ *  @params: String eragiketa Artikuloari aplikatu nahi diogun eragiketa. (onartu/baztertu).
+ *           String artikuloa Artikuloaren izenburua.
+ * 
+ *  @return: void
+ * 
+ */
+function artikuloaManeiatu( eragiketa, artikuloa ) {
+
+    var xhttp = null;
+    if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xhttp = new XMLHttpRequest();
+     } else {
+        // code for old IE browsers
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var erantzuna = parseInt(this.response);
+            switch(erantzuna) {
+                case 0:
+                    console.log('Dena ondo joan da.')
+                    eskatuOrria('admin');
+                    break;
+                case 1:
+                    console.log('Sartutako datuak desegokiak dira.');
+                    break;
+                case 2:
+                    console.log('Emandako artikuloa ez bada existitzen.');
+                    break;
+                case 3:
+                    console.log('Emandako eragiketa ezezaguna bada.');
+                    break;
+                case 4:
+                    console.log('AccessDenied erabiltzailea ez da administratzailea.');
+                    break;
+            }
+        }
+    }
+    xhttp.open("GET", "functions/artikuloa/manage_article.php?eragiketa="+eragiketa+"&artikuloa="+artikuloa, false);
+    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+    console.log(xhttp);
+}

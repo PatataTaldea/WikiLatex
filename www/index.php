@@ -33,6 +33,31 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
+        <!-- Cookie Consent -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+            window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                "background": "#eaf7f7",
+                "text": "#5c7291"
+                },
+                "button": {
+                "background": "#56cbdb",
+                "text": "#ffffff"
+                }
+            },
+            "theme": "edgeless",
+            "content": {
+                "message": "Webgune honek cookiak erabiltzen ditu erabiltzailearen experientzia hobetzearren",
+                "dismiss": "Ados!",
+                "link": "Irakurri gehiago"
+            }
+            })});
+        </script>
+
         <!-- Goiburukoa -->
         <link rel="icon" type="image/icon"  href="favicon.ico">
         <title>WikiLatex</title>

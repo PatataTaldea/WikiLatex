@@ -30,4 +30,10 @@
     <password>patata</password>
     <type>user</type>
   </erabiltzaile>
+  <erabiltzaile>
+    <username>patata</username>
+    <email>patata@patata.com</email>
+    <password>patata</password>
+    <type>user</type>
+  </erabiltzaile>
 </erabiltzaileak>
