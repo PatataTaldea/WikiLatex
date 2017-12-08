@@ -10,7 +10,7 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
     <div class="alert alert-info" role="alert">
       <h1 class="alert-heading">Ongi etorri WIKILATEXera!<img src="assets/img/LaTeX_logo.png" height="150" width="450" class="rounded float-right" alt="..."></h1>
       <p>Webgune honetan Latex erabiltzean lagungarri izango zaizkizun gauza interesgarri asko topatuko dituzu!<img src="assets/img/homer.gif" class="rounded float-right" alt="..."></p>
-      <p>Oraindik KAKA ez badakizu nondik hasi, sakatu nabigazio barran ageri diren botoiak.</p>
+      <p>Oraindik ez badakizu nondik hasi, sakatu nabigazio barran ageri diren botoiak.</p>
       <p>Saltseatu pixka bat gure webgunean!</p>
       <hr>
       <p class="mb-0">>>> Zalantzarik baduzu jarri kontaktuan gurekin posta edo iruzkin bidez.</p>
@@ -68,15 +68,13 @@ $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create objec
 <?php
     foreach($data->artikuloa as $artikuloa){
   ?>
-      <div class="list-group" onclick="console.log('patata');">
-        <a href="<?php echo $artikuloa->textua;?>" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="list-group-item list-group-item-action flex-column align-items-start" onclick="idatziArtikulua('<?php echo $artikuloa->textua;?>');">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?php echo $artikuloa->izenburua;?></h5>
             <small><?php echo $artikuloa->saila; ?></small>
          </div>
           <p class="mb-1"><?php echo $artikuloa->deskribapena;?></p>
           <small>Egilea: <?php echo $artikuloa->idazlea;?></small>
-       </a>
       </div>	
 
 <?php
