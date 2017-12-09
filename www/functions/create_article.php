@@ -51,10 +51,12 @@ if (isset($_POST['editor']) ){
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
-	    echo $contenido;
+	    echo '1';
+
+
 	}   
 	else{
-		echo('<script>alert("Izenburu errepikatua, erabili beste bat!");</script>');
+		echo '2';
 	} 
 
        
