@@ -9,6 +9,9 @@ define("HOME", "pages/home.html");
 define("KONTAKTUA", "pages/kontaktua.html");
 define("IRUZKINAK_ORRIA", "pages/iruzkinak.php");
 define("SAILA_ORRIA", "pages/saila.php");
+define("SETTINGS_OROKORRA", "pages/settings_orokorra.php");
+define("SETTINGS_ARTIKULOAK", "pages/settings_artikuloak.php");
+define("SETTINGS_ADMIN", "pages/settings_admin.php");
 
 // Datuak
 define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
