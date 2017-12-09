@@ -16,7 +16,7 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
             Sortu berria:
-            <button type="button" class="btn btn-info float-right" id="sortuArtikuloaBtn" onclick="sortuArtikuloBerria()">Sortu</button>
+            <button type="button" class="btn btn-info float-right" id="sortuArtikuloaBtn" onclick="javascript:location.href='<?php echo INDEX.'?sortu=true';?>'">Sortu</button>
             </li>
         </ul>
     </div>

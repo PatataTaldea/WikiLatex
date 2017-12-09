@@ -12,10 +12,18 @@
         session_start();
     }
 
-    if (isset($_GET['artikuloa'])) {
+    if (isset($_GET['sortu'])) {
+
+        if(!isset($_SESSION['logeatuta'])){
+            header('Location: '.INDEX);
+            die();
+        }
+
+    }else if (isset($_GET['artikuloa'])) {
         $artikuloak = simplexml_load_file(ARTIKULUAK) or die("Error: Cannot create object");
         $artikuloa = $artikuloak->xpath("/artikuloak/artikuloa[izenburua='".$_GET['artikuloa']."']");
     }
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +33,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <script src="js/script.js"></script>
+
+        <?php 
+        if (isset($_GET['sortu'])) {
+            ?>
+            <script src="modules/ckeditor/ckeditor.js"></script>
+            <script src="js/sample.js"></script>
+            <script src="js/prueba.js"></script>
+            <script src="modules/ckeditor/ckeditor.js"></script>
+            <?php
+        }
+        ?>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -115,7 +134,12 @@
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol id="nabigazioa_lista" class="breadcrumb">
                             <?php
-                            if (isset($artikuloa) && $artikuloa != NULL) {
+                            if (isset($_GET['sortu']) ) {
+                                ?> 
+                                    <li class="breadcrumb-item"><a href="javascript:idatziOrria('HOME')">Home</a></li>
+                                    <li class="breadcrumb-item active">Sortu artikulo berria</li>
+                                <?php
+                            }else if (isset($artikuloa) && $artikuloa != NULL) {
                                 ?>
                                     <li class="breadcrumb-item"><a href="javascript:idatziOrria('HOME')">Home</a></li>
                                     <li class="breadcrumb-item"><a href="javascript:idatziOrria('<?php echo $artikuloa[0]->saila?>')"><?php echo $artikuloa[0]->saila; ?></a></li>
@@ -138,11 +162,11 @@
         <!-- Orria -->
         <div id="orria" class="container-fluid">
             <?php 
-                if (isset($_GET['artikuloa'])) {
+                if (isset($_GET['sortu'])) {
+                    require ARTIKULOA_SORTU;
+                }else if (isset($_GET['artikuloa'])) {
                     $_GET['izenburua'] = $_GET['artikuloa'];
                     require 'functions/article.php';
-                    //$html = lortu_artikuloa($artikuloa,'');
-                    //echo $html;
                 } else if (isset($artikuloa) && $artikuloa == NULL) {
                     $html = file_get_contents(ERROR_404);
                     echo $html;

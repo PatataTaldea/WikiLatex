@@ -12,6 +12,7 @@ define("SAILA_ORRIA", "pages/saila.php");
 define("SETTINGS_OROKORRA", "pages/settings_orokorra.php");
 define("SETTINGS_ARTIKULOAK", "pages/settings_artikuloak.php");
 define("SETTINGS_ADMIN", "pages/settings_admin.php");
+define("ARTIKULOA_SORTU", "pages/newArticle.php");
 
 // Datuak
 define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
