@@ -1,34 +1,56 @@
   function artikuluBerri() {
 
-    var editor = CKEDITOR.instances.editor;
+    if(!required()){
+        alert("Sartu izenburu eta hitz gakoak!");
+    }
+    else{
+        var editor = document.getElementById('text');
+        var data = editor.value;
 
-	var data = editor.getData();
- 
-	 // Sortu AJAX eskaera
-        if (window.XMLHttpRequest) {
-            // code for modern browsers
-            xhttp = new XMLHttpRequest();
-         } else {
-            // code for old IE browsers
-            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        } 
-    
-        // Erantzuna tratatu
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var erantzuna = parseInt(this.response)
-                console.log(erantzuna);
-                
+        var sailaList = document.getElementById('saila');
+        var saila = sailaList.options[sailaList.selectedIndex].text;
+
+        var izenburua = document.getElementById('izenburua');
+        var hitzGakoak = document.getElementById('hitzGako').value;
+
+
+
+         // Sortu AJAX eskaera
+            if (window.XMLHttpRequest) {
+                // code for modern browsers
+                xhttp = new XMLHttpRequest();
+             } else {
+                // code for old IE browsers
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } 
+        
+            // Erantzuna tratatu
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var erantzuna = parseInt(this.response)
+                    console.log(erantzuna);
+                    
+                }
             }
-        }
 
-        // AJAX eskeara osatu eta bidali
-        xhttp.open("POST", "functions/create_article.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("editor="+data);
-        console.log(xhttp);
+            // AJAX eskeara osatu eta bidali
+            xhttp.open("POST", "functions/create_article.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("izenburua="+izenburua.value+"&saila="+saila+"&hitzGakoak="+hitzGakoak+"&editor="+data);
+            console.log(xhttp);
+        }
+    
   }
 
-       
-    
+   
+  function required()   { 
+    var izenburua = document.getElementById('izenburua').value;
 
+    var hitzGakoak = document.getElementById('hitzGako').value;
+
+     if (izenburua.length == 0 || hitzGakoak.length ==0)  
+      {         
+         return false; 
+      }       
+      return true;   
+    } 

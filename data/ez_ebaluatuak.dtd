@@ -1,6 +1,6 @@
 <!ELEMENT artikuloak (artikuloa)*>
 <!ATTLIST artikuloak>
-<!ELEMENT artikuloa (izenburua, hitzgakoak, saila, idazlea, idazlea_izena, textua)>
+<!ELEMENT artikuloa (izenburua, hitzgakoak, saila, idazlea)>
 <!ELEMENT izenburua (#PCDATA)>
 <!ELEMENT hitzgakoak (hitza)*>
 <!ATTLIST hitza>

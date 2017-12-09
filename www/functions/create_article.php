@@ -1,23 +1,10 @@
 <?php
-/*
- * Fitxategi honek erabiltzaileak sortzeko erabiltzen da. Bidalitako informazioa aztertu, datubasea
- * izango den XML fitxategia atzitzeko eta aldatzeko balio du. Jasotako informazioaren arabera, eta
- * datubasearen arabera emaitza ezberdinak itzuliko ditu.
- * 
- * @param: String $_POST['username'] erabiltzaile berriaren erabiltzaile-izena.
- *         String $_POST['email'] erabiltzaile berriaren emaila.
- *         String $_POST['pasahitza'] erabiltzaile berria izango duen pasahitza.
- *  
- * @return: 0 Dena ondo joan bada eta erabiltzailea sortu badu.
- *          1 Erabiltzailea jadanik existitzen bada. Email berdina duen erabiltzaila
- *            hain zuzen ere.
- *          2 Jaso behar diren datu guztiak jaso ez badira.
- *          3 erabiltzaile izena tamaina desegokia badu.
-*/
+
 
 session_start();
 require '../config.php';
 require 'xml_functions.php';
+
 
 if (isset($_POST['editor']) ){
 
@@ -25,11 +12,38 @@ if (isset($_POST['editor']) ){
 
 	$berria=$artikuluak->addChild('artikuloa');
 
+	print_r($_POST['editor']);
+
 	
-	$berria->addChild('idazlea_izena',$_SESION['erabiltzailea']);
-	$berria->addChild('idazlea',$_SESION['erab_email']);
-	//$berria->addChild('textua',$_POST['data']);
+	$hitzGakoak=$berria->addChild('hitzgakoak');
+
+	$hitzGakoa=explode(",",$_POST['hitzGakoak']);
 	
+	foreach ($hitzGakoa as $gako){
+		$hitzGakoak->addChild('hitza',$gako);
+	}
+
+	
+	$berria->addChild('izenburua',$_POST['izenburua']);
+
+	$berria->addChild('saila',$_POST['saila']);
+
+	if(isset($_SESSION['erabiltzailea'])){
+		$berria->addChild('idazlea_izena',$_SESSION['erabiltzailea']);
+	}
+	
+	
+	if(isset($_SESSION['erab_email'])){
+		$berria->addChild('idazlea',$_SESION['erab_email']);
+	}
+	
+	$berria->addChild('textua',$_POST['editor']);
+
+	$contenido = $_POST['editor'];
+
+	file_put_contents('../../data/artikuluak/'.$_POST['saila'].'.html', $contenido);
+	
+    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
     echo '0';
       
