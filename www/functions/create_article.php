@@ -8,7 +8,17 @@ require 'xml_functions.php';
 
 if (isset($_POST['editor']) ){
 
+
+
 	$artikuluak=simplexml_load_file('../'.EZ_ARTIKULUAK) or die("Error: Cannot create object");
+
+	foreach ($artikuluak->artikuloa as $artikuloa){
+		if(strcmp($artikuloa->izenburua,$_POST['izenburua']) && strcmp($artikuloa->saila,$_POST['saila'])){
+			echo('<script>
+    alert("Izenburu errepikatua, erabili beste izenburu bat!");
+</script>');
+			break;
+		}
 
 	$berria=$artikuluak->addChild('artikuloa');
 
@@ -37,11 +47,11 @@ if (isset($_POST['editor']) ){
 		$berria->addChild('idazlea',$_SESION['erab_email']);
 	}
 	
-	$berria->addChild('textua',$_POST['editor']);
+	$berria->addChild('textua',$_POST['saila'].'/'.$_POST['izenburua'].'.html');
 
 	$contenido = $_POST['editor'];
 
-	file_put_contents('../../data/artikuluak/'.$_POST['saila'].'.html', $contenido);
+	file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
 	
     save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
