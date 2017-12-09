@@ -144,11 +144,17 @@ function idatziOrria( orria_izena ){
             orria.innerHTML = this.responseText;
             var nabigazioa_html = '' +
                         '<nav aria-label="breadcrumb" role="navigation">' +
-                        '<ol id="nabigazioa_lista" class="breadcrumb">' +
-                        '<li class="breadcrumb-item"><a href="index.php">Home</a></li>' +
-                        '<li class="breadcrumb-item active" aria-current="page">' + orria_izena +'</li>' +
-                        '</ol>' + 
-                        '</nav> ';
+                        '<ol id="nabigazioa_lista" class="breadcrumb">';
+
+            if (orria_izena == "HOME") {
+                nabigazioa_html += '<li class="breadcrumb-item active" aria-current="page">Home</li>';
+            } else {
+                nabigazioa_html += '<li class="breadcrumb-item"><a href="javascript:idatziOrria(\'HOME\')">Home</a></li>' +
+                                    '<li class="breadcrumb-item active" aria-current="page">' + orria_izena +'</li>';
+            }
+            nabigazioa_html += '</ol>' + 
+                               '</nav> ';
+
             nabigazioa.innerHTML = nabigazioa_html;
         }
     }
@@ -179,11 +185,13 @@ function idatziArtikulua( orria_izena, orria_saila ){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             orria.innerHTML = this.responseText;
+
+            
             var nabigazioa_html = '' +
                         '<nav aria-label="breadcrumb" role="navigation">' +
                         '<ol id="nabigazioa_lista" class="breadcrumb">' +
-                        '<li class="breadcrumb-item"><a href="index.php">Home</a></li>' +
-                        '<li class="breadcrumb-item active" aria-current="page"><a href="functions/sailist.php?saila='+orria_saila+'">'+orria_saila+'</a></li>' +
+                        '<li class="breadcrumb-item"><a href="javascript:idatziOrria(\'HOME\')">Home</a></li>' +
+                        '<li class="breadcrumb-item active" aria-current="page"><a href="javascript:idatziOrria(\''+ orria_saila + '\')">'+orria_saila+'</a></li>' +
                         '<li class="breadcrumb-item active" aria-current="page">' + orria_izena +'</li>' +
                         '</ol>' + 
                         '</nav> ';

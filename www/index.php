@@ -93,9 +93,19 @@
                 <!-- Ezkerreko menua -->
                 <div id="menua" class="menua w3-sidebar w3-card">
                     <div id="menu_lista" class="w3-bar-block">
-                        <button class="w3-bar-item w3-button" onclick="location.href='index.php'">HOME</button>
-                        <button class="w3-bar-item w3-button" onclick="idatziOrria('Nondik hasi');">Nondik hasi</button>
-                        <button class="w3-bar-item w3-button" onclick="idatziOrria('Algoritmoak');">Algoritmoak</button>
+                        <button class="w3-bar-item w3-button" onclick="idatziOrria('HOME')">HOME</button>
+                        <!-- PHP bidez sortutako sailak -->
+                        <?php 
+                         $sailak = simplexml_load_file(SAILAK) or die("Error: Cannot create object");
+
+                         foreach($sailak->saila as $saila) {
+                             ?> 
+                             <button class="w3-bar-item w3-button" onclick="idatziOrria('<?php echo $saila; ?>');"><?php echo $saila; ?></button>
+                             <?php
+                         }
+                        ?>
+
+                        <!-- Defektuzko 2 sail -->
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Iruzkinak');">Iruzkinak</button>
                         <button class="w3-bar-item w3-button" onclick="idatziOrria('Kontaktua');">Kontaktua</button>
                     </div> 
@@ -107,8 +117,8 @@
                             <?php
                             if (isset($artikuloa) && $artikuloa != NULL) {
                                 ?>
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#"><?php echo $artikuloa[0]->saila; ?></a></li>
+                                    <li class="breadcrumb-item"><a href="javascript:idatziOrria('HOME')">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript:idatziOrria('<?php echo $artikuloa[0]->saila?>')"><?php echo $artikuloa[0]->saila; ?></a></li>
                                     <li class="breadcrumb-item active"><?php echo $artikuloa[0]->izenburua; ?></li>
                                 <?php
                             } else {
@@ -128,24 +138,17 @@
         <!-- Orria -->
         <div id="orria" class="container-fluid">
             <?php 
-                if (isset($artikuloa) && $artikuloa != NULL) {
-                    echo lortu_artikuloa($artikuloa);
+                if (isset($_GET['artikuloa'])) {
+                    $_GET['izenburua'] = $_GET['artikuloa'];
+                    require 'functions/article.php';
                 } else if (isset($artikuloa) && $artikuloa == NULL) {
                     $html = file_get_contents(ERROR_404);
                     echo $html;
+                } else if(!isset($_GET['artikuloa'])){
+                    require HOME;
                 }
+                
             ?>
-            <div class="alert alert-warning" role="alert">
-                <p class="mb-0">OHARRA: Webgunea oraindik beta egoeran dago eta ez dago osaturik. Barkatu eragozpenak.</p>
-            </div>
-            <div class="alert alert-info" role="alert">
-                <h1 class="alert-heading">Ongi etorri WIKILATEXera!<img src="assets/img/LaTeX_logo.png" height="150" width="450" class="rounded float-right" alt="..."></h1>
-                <p>Webgune honetan Latex erabiltzean lagungarri izango zaizkizun gauza interesgarri asko topatuko dituzu!<img src="assets/img/homer.gif" class="rounded float-right" alt="..."></p>
-                <p>Oraindik ez badakizu nondik hasi, sakatu nabigazio barran ageri diren botoiak.</p>
-                <p>Saltseatu pixka bat gure webgunean!</p>
-                <hr>
-                <p class="mb-0">>>> Zalantzarik baduzu jarri kontaktuan gurekin posta edo iruzkin bidez.</p>
-            </div> 
         </div>
     </body>
 </html>

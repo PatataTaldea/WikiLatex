@@ -5,6 +5,10 @@ define("INDEX", "index.php");
 define("LOGIN", "login.php");
 define("REGISTER", "register.php");
 define("SETTINGS", "settings.php");
+define("HOME", "pages/home.html");
+define("KONTAKTUA", "pages/kontaktua.html");
+define("IRUZKINAK_ORRIA", "pages/iruzkinak.php");
+define("SAILA_ORRIA", "pages/saila.php");
 
 // Datuak
 define("ERABILTZAILEAK", "../data/erabiltzaileak.xml");
