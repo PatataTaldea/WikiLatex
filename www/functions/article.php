@@ -12,8 +12,14 @@ if (isset($_GET['artikuloa'])){
     require $ROOTPATH.'config.php';
     require 'xml_functions.php';
 
-    $data = simplexml_load_file($ROOTPATH.ARTIKULUAK) or die("Error: Cannot create object");
-    $artikuloa = $data->xpath("/artikuloak/artikuloa[izenburua='".$_GET['izenburua']."']")[0];
+    if (isset($_GET['ez-ebaluatua'])) {
+        $data = simplexml_load_file($ROOTPATH.EZ_ARTIKULUAK) or die("Error: Cannot create object");
+        $artikuloa = $data->xpath("/artikuloak/artikuloa[izenburua='".$_GET['izenburua']."']")[0];
+    }else{
+        $data = simplexml_load_file($ROOTPATH.ARTIKULUAK) or die("Error: Cannot create object");
+        $artikuloa = $data->xpath("/artikuloak/artikuloa[izenburua='".$_GET['izenburua']."']")[0];
+    }
+
     
 }
 

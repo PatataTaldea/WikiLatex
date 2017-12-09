@@ -312,7 +312,8 @@ function aldatuPasahitza(){
  * 
  */
 function artikuloaManeiatu( eragiketa, artikuloa ) {
-
+    var aurreikuspena = document.getElementById('artikulo-aurreikuspena');
+    aurreikuspena.innerHTML = "";
     var xhttp = null;
     if (window.XMLHttpRequest) {
         // code for modern browsers
@@ -345,6 +346,31 @@ function artikuloaManeiatu( eragiketa, artikuloa ) {
         }
     }
     xhttp.open("GET", "functions/artikuloa/manage_article.php?eragiketa="+eragiketa+"&artikuloa="+artikuloa, false);
+    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+
+}
+
+function artikuloaBistaratu( artikuloa ) {
+    var aurreikuspena = document.getElementById('artikulo-aurreikuspena');
+    console.log(artikuloa);
+    var xhttp = null;
+    if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xhttp = new XMLHttpRequest();
+     } else {
+        // code for old IE browsers
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var html = '<div class="col-1"></div><div class="col-10">';
+                html+= this.responseText;
+                html+= '</div><div class="col-1"></div>';
+            aurreikuspena.innerHTML = html;
+        }
+    }
+    xhttp.open("GET", "functions/article.php?izenburua="+artikuloa+"&ez-ebaluatua=true", true);
     //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
     console.log(xhttp);
