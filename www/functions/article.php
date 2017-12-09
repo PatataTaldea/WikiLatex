@@ -2,16 +2,17 @@
 
 // Index-etik egin da deia artikuloa zuzenean erakusteko.
 if (isset($_GET['artikuloa'])){
-    
+    $ROOTPATH = '';
     $data = simplexml_load_file(ARTIKULUAK) or die("Error: Cannot create object");
     $artikuloa = $data->xpath("/artikuloak/artikuloa[izenburua='".$_GET['artikuloa']."']")[0];
     
 // AJAX dei bat egin da.
 }else {
-    require '../config.php';
+    $ROOTPATH = '../';
+    require $ROOTPATH.'config.php';
     require 'xml_functions.php';
-    
-    $data = simplexml_load_file("../".ARTIKULUAK) or die("Error: Cannot create object");
+
+    $data = simplexml_load_file($ROOTPATH.ARTIKULUAK) or die("Error: Cannot create object");
     $artikuloa = $data->xpath("/artikuloak/artikuloa[izenburua='".$_GET['izenburua']."']")[0];
     
 }
@@ -24,7 +25,7 @@ if (isset($artikuloa)) {
         </div>
         <div class="card-body">
             <h1 class="card-title"><u><?php echo $artikuloa->izenburua;?></u></h1>
-            <p class="card-text"><?php $html = lortu_artikuloa($artikuloa);?></p>
+            <p class="card-text"><?php $html = lortu_artikuloa($artikuloa,$ROOTPATH);?></p>
         </div>
         <div class="card-footer text-muted">
             <h3 align="right"><?php echo $artikuloa->idazlea_izena;?></h3>

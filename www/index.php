@@ -141,6 +141,8 @@
                 if (isset($_GET['artikuloa'])) {
                     $_GET['izenburua'] = $_GET['artikuloa'];
                     require 'functions/article.php';
+                    //$html = lortu_artikuloa($artikuloa,'');
+                    //echo $html;
                 } else if (isset($artikuloa) && $artikuloa == NULL) {
                     $html = file_get_contents(ERROR_404);
                     echo $html;
