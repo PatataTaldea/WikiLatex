@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artikuloak>
+<<<<<<< HEAD
   
 </artikuloak>
+=======
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>a</hitza>
+    </hitzgakoak>
+    <izenburua>a</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea/>
+    <textua>Ikur matematikoak/a.html</textua>
+  </artikuloa>
+>>>>>>> 6f06a812d3a604d301e0aa1097348deeb3b0ac70

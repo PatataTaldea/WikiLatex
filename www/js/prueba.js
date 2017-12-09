@@ -1,12 +1,12 @@
   function artikuluBerri() {
 
     if(!required()){
-        alert("Sartu izenburu eta hitz gakoak!");
+        alert("Sartu izenburu, hitz gakoak eta artikulua!");
     }
     else{
-        var editor = document.getElementById('text');
-        var data = editor.value;
-
+        
+        var data = CKEDITOR.instances.text.getData();
+       
         var sailaList = document.getElementById('saila');
         var saila = sailaList.options[sailaList.selectedIndex].text;
 
@@ -45,10 +45,10 @@
    
   function required()   { 
     var izenburua = document.getElementById('izenburua').value;
-
+    var data = CKEDITOR.instances.text.getData();
     var hitzGakoak = document.getElementById('hitzGako').value;
 
-     if (izenburua.length == 0 || hitzGakoak.length ==0)  
+     if (izenburua.length == 0 || hitzGakoak.length ==0 || data.length ==0)  
       {         
          return false; 
       }       
