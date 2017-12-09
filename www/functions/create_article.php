@@ -12,51 +12,50 @@ if (isset($_POST['editor']) ){
 
 	$artikuluak=simplexml_load_file('../'.EZ_ARTIKULUAK) or die("Error: Cannot create object");
 
-	foreach ($artikuluak->artikuloa as $artikuloa){
-		if(strcmp($artikuloa->izenburua,$_POST['izenburua']) && strcmp($artikuloa->saila,$_POST['saila'])){
-			echo('<script>
-    alert("Izenburu errepikatua, erabili beste izenburu bat!");
-</script>');
-			break;
+	$art = $artikuluak->xpath("/artikuluak/artikuloa[izenburua='".$_POST['izenburua']."']");
+    
+    if($art == NULL) {
+
+		$berria=$artikuluak->addChild('artikuloa');
+
+		print_r($_POST['editor']);
+
+		
+		$hitzGakoak=$berria->addChild('hitzgakoak');
+
+		$hitzGakoa=explode(",",$_POST['hitzGakoak']);
+		
+		foreach ($hitzGakoa as $gako){
+			$hitzGakoak->addChild('hitza',$gako);
 		}
 
-	$berria=$artikuluak->addChild('artikuloa');
+		
+		$berria->addChild('izenburua',$_POST['izenburua']);
 
-	print_r($_POST['editor']);
+		$berria->addChild('saila',$_POST['saila']);
 
-	
-	$hitzGakoak=$berria->addChild('hitzgakoak');
+		if(isset($_SESSION['erabiltzailea'])){
+			$berria->addChild('idazlea_izena',$_SESSION['erabiltzailea']);
+		}
+		
+		
+		if(isset($_SESSION['erab_email'])){
+			$berria->addChild('idazlea',$_SESION['erab_email']);
+		}
+		
+		$berria->addChild('textua',$_POST['saila'].'/'.$_POST['izenburua'].'.html');
 
-	$hitzGakoa=explode(",",$_POST['hitzGakoak']);
-	
-	foreach ($hitzGakoa as $gako){
-		$hitzGakoak->addChild('hitza',$gako);
-	}
+		$contenido = $_POST['editor'];
 
-	
-	$berria->addChild('izenburua',$_POST['izenburua']);
+		file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
+		
+	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
-	$berria->addChild('saila',$_POST['saila']);
-
-	if(isset($_SESSION['erabiltzailea'])){
-		$berria->addChild('idazlea_izena',$_SESSION['erabiltzailea']);
-	}
-	
-	
-	if(isset($_SESSION['erab_email'])){
-		$berria->addChild('idazlea',$_SESION['erab_email']);
-	}
-	
-	$berria->addChild('textua',$_POST['saila'].'/'.$_POST['izenburua'].'.html');
-
-	$contenido = $_POST['editor'];
-
-	file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
-	
-    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
-
-    echo $contenido;
-      
+	    echo $contenido;
+	}   
+	else{
+		echo('<script>alert("Izenburu errepikatua, erabili beste bat!");</script>');
+	} 
 
        
 } else echo '1';
