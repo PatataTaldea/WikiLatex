@@ -51,7 +51,7 @@ if (isset($_POST['editor']) ){
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
-	    echo '1';
+	    echo '0';
 
 
 	}   
