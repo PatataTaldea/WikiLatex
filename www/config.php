@@ -27,5 +27,4 @@ define('ROOTPATH', (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[
 
 // Erroreak
 define("ERROR_404", "error/404.html");
-
 ?>

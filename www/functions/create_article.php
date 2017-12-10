@@ -11,8 +11,8 @@ if (isset($_POST['editor']) ){
 
 	$artikuluak=simplexml_load_file('../'.EZ_ARTIKULUAK) or die("Error: Cannot create object");
 	$artikuluak2=simplexml_load_file('../'.ARTIKULUAK) or die("Error: Cannot create object");
-	$art = $artikuluak->xpath("/artikuluak/artikuloa[izenburua='".$_POST['izenburua']."']");
-	$art2 = $artikuluak2->xpath("/artikuluak/artikuloa[izenburua='".$_POST['izenburua']."']");
+	$art = $artikuluak->xpath("artikuloa[izenburua='".$_POST['izenburua']."']")[0];
+	$art2 = $artikuluak2->xpath("artikuloa[izenburua='".$_POST['izenburua']."']")[0];
     
     if($art == NULL && $art2 == NULL) {
 
@@ -49,7 +49,7 @@ if (isset($_POST['editor']) ){
 
 		$sail = preg_replace('/\s+/', '_', $_POST['saila']);
 
-		file_put_contents('../../data/artikuluak/'.$sail.'/'.$_POST['izenburua'].'.html', $contenido);
+		file_put_contents('../'.ARTIKULUAK_KARPETA.$sail.'/'.$_POST['izenburua'].'.html', $contenido);
 
 		$berria->addChild('textua',$sail.'/'.$_POST['izenburua'].'.html');
 		
