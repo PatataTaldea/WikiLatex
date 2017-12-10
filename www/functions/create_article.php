@@ -10,10 +10,11 @@ if (isset($_POST['editor']) ){
 
 
 	$artikuluak=simplexml_load_file('../'.EZ_ARTIKULUAK) or die("Error: Cannot create object");
-	
+	$artikuluak2=simplexml_load_file('../'.ARTIKULUAK) or die("Error: Cannot create object");
 	$art = $artikuluak->xpath("/artikuluak/artikuloa[izenburua='".$_POST['izenburua']."']");
+	$art2 = $artikuluak2->xpath("/artikuluak/artikuloa[izenburua='".$_POST['izenburua']."']");
     
-    if($art == NULL) {
+    if($art == NULL && $art2 == NULL) {
 
 		$berria=$artikuluak->addChild('artikuloa');
 
