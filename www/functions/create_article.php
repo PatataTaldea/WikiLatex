@@ -47,11 +47,9 @@ if (isset($_POST['editor']) ){
 
 		$contenido = $_POST['editor'];
 
-		
+		$path = preg_replace('/\s+/', '_', '../'.ARTIKULUAK_KARPETA.$_POST['saila'].'/'.$_POST['izenburua'].'.html');
 
-		file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
-
-		
+		file_put_contents($path, $contenido);
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 

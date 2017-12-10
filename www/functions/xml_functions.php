@@ -42,6 +42,7 @@ function save_formated(&$simpleXmlObject, $path){
 function lortu_artikuloa($artikuloa,$path){
     $helbidea = preg_replace('/\s+/', '_', $artikuloa[0]->saila . "/" . $artikuloa[0]->izenburua . ".html");
     $html = file_get_contents($path.ARTIKULUAK_KARPETA . $helbidea);
+    //$html = file_get_contents(ARTIKULUAK_KARPETA . $helbidea);
     return $html;
 }
 
