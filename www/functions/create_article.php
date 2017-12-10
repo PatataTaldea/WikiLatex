@@ -18,7 +18,7 @@ if (isset($_POST['editor']) ){
 
 		$berria=$artikuluak->addChild('artikuloa');
 
-		print_r($_POST['editor']);
+	
 
 		
 		$hitzGakoak=$berria->addChild('hitzgakoak');
@@ -45,15 +45,13 @@ if (isset($_POST['editor']) ){
 		
 		$berria->addChild('textua',$_POST['saila'].'/'.$_POST['izenburua'].'.html');
 
-		echo '7';
-
 		$contenido = $_POST['editor'];
 
-		echo '6';
+		
 
 		file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
 
-		echo '5';
+		
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
