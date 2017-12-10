@@ -1,7 +1,9 @@
   function artikuluBerri() {
-
+    var response_alert = document.getElementById('response_alert');
     if(!required()){
-        alert("Sartu izenburu, hitz gakoak eta artikulua!");
+        response_alert.style = "";
+        response_alert.className = "alert alert-danger";
+        response_alert.innerHTML = "Sartu izenburu, hitz gakoak eta artikulua!";
     }
     else{
         
@@ -14,7 +16,7 @@
         var hitzGakoak = document.getElementById('hitzGako').value;
         var bidali = document.getElementById('bidali');
 
-        var response_alert = document.getElementById('response_alert');
+       
 
          // Sortu AJAX eskaera
         if (window.XMLHttpRequest) {

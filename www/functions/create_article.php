@@ -43,19 +43,15 @@ if (isset($_POST['editor']) ){
 			$berria->addChild('idazlea',substr($_SESSION['erab_email'],0));
 		}
 		
-		$berria->addChild('textua',$_POST['saila'].'/'.$_POST['izenburua'].'.html');
+		
 
 		$contenido = $_POST['editor'];
 
-<<<<<<< HEAD
 		$sail = preg_replace('/\s+/', '_', $_POST['saila']);
 
 		file_put_contents('../../data/artikuluak/'.$sail.'/'.$_POST['izenburua'].'.html', $contenido);
-=======
-		$path = preg_replace('/\s+/', '_', '../'.ARTIKULUAK_KARPETA.$_POST['saila'].'/'.$_POST['izenburua'].'.html');
->>>>>>> e14e7952ea105ce15fd5bfa5f8a621370b027384
 
-		file_put_contents($path, $contenido);
+		$berria->addChild('textua',$sail.'/'.$_POST['izenburua'].'.html');
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
