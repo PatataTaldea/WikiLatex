@@ -9,9 +9,8 @@ require 'xml_functions.php';
 if (isset($_POST['editor']) ){
 
 
-
 	$artikuluak=simplexml_load_file('../'.EZ_ARTIKULUAK) or die("Error: Cannot create object");
-
+	
 	$art = $artikuluak->xpath("/artikuluak/artikuloa[izenburua='".$_POST['izenburua']."']");
     
     if($art == NULL) {
@@ -35,19 +34,25 @@ if (isset($_POST['editor']) ){
 		$berria->addChild('saila',$_POST['saila']);
 
 		if(isset($_SESSION['erabiltzailea'])){
-			$berria->addChild('idazlea_izena',$_SESSION['erabiltzailea']);
+			$berria->addChild('idazlea_izena',substr($_SESSION['erabiltzailea'],0));
 		}
 		
 		
 		if(isset($_SESSION['erab_email'])){
-			$berria->addChild('idazlea',$_SESION['erab_email']);
+			$berria->addChild('idazlea',substr($_SESSION['erab_email'],0));
 		}
 		
 		$berria->addChild('textua',$_POST['saila'].'/'.$_POST['izenburua'].'.html');
 
+		echo '7';
+
 		$contenido = $_POST['editor'];
 
+		echo '6';
+
 		file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
+
+		echo '5';
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 

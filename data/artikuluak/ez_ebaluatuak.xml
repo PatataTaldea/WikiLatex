@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artikuloak>
-<<<<<<< HEAD
-  
-</artikuloak>
-=======
   <artikuloa>
     <hitzgakoak>
-      <hitza>a</hitza>
+      <hitza>c</hitza>
     </hitzgakoak>
-    <izenburua>a</izenburua>
+    <izenburua>c</izenburua>
     <saila>Ikur matematikoak</saila>
-    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea_izena>Oscar</idazlea_izena>
     <idazlea/>
-    <textua>Ikur matematikoak/a.html</textua>
+    <textua>Ikur matematikoak/c.html</textua>
   </artikuloa>
->>>>>>> 6f06a812d3a604d301e0aa1097348deeb3b0ac70
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>c</hitza>
+    </hitzgakoak>
+    <izenburua>cd</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>Oscar</idazlea_izena>
+    <idazlea>osainz59@gmail.com</idazlea>
+    <textua>Ikur matematikoak/cd.html</textua>
+  </artikuloa>
+</artikuloak>
