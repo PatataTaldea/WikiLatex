@@ -47,9 +47,9 @@ if (isset($_POST['editor']) ){
 
 		$contenido = $_POST['editor'];
 
-		
+		$sail = preg_replace('/\s+/', '_', $_POST['saila']);
 
-		file_put_contents('../../data/artikuluak/'.$_POST['saila'].'/'.$_POST['izenburua'].'.html', $contenido);
+		file_put_contents('../../data/artikuluak/'.$sail.'/'.$_POST['izenburua'].'.html', $contenido);
 
 		
 		

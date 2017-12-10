@@ -12,8 +12,9 @@
 
         var izenburua = document.getElementById('izenburua');
         var hitzGakoak = document.getElementById('hitzGako').value;
+        var bidali = document.getElementById('bidali');
 
-
+        var response_alert = document.getElementById('response_alert');
 
          // Sortu AJAX eskaera
         if (window.XMLHttpRequest) {
@@ -29,6 +30,16 @@
             if (this.readyState == 4 && this.status == 200) {
                 var erantzuna = parseInt(this.response)
                 console.log(erantzuna);
+                response_alert.style = "";
+                if (erantzuna == 0 ){
+                    response_alert.className = "alert alert-success"; 
+                    response_alert.innerHTML = "Ondo sortu duzu artikulua!";
+                    bidali.disabled=true;
+
+                } else if(erantzuna == 2){
+                    response_alert.className = "alert alert-danger";
+                    response_alert.innerHTML = "Izenburu hori duen artikulua existitzen da dagoeneko";
+                }
                 
             }
         }
