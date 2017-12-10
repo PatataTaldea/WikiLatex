@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artikuloak>
+<<<<<<< HEAD
   <artikuloa>
     <hitzgakoak>
       <hitza>c</hitza>
@@ -150,4 +151,6 @@
     <idazlea>a@gmail.com</idazlea>
     <textua>Ikur matematikoak/a.html</textua>
   </artikuloa>
+=======
+>>>>>>> e14e7952ea105ce15fd5bfa5f8a621370b027384
 </artikuloak>

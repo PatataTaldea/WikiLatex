@@ -47,11 +47,15 @@ if (isset($_POST['editor']) ){
 
 		$contenido = $_POST['editor'];
 
+<<<<<<< HEAD
 		$sail = preg_replace('/\s+/', '_', $_POST['saila']);
 
 		file_put_contents('../../data/artikuluak/'.$sail.'/'.$_POST['izenburua'].'.html', $contenido);
+=======
+		$path = preg_replace('/\s+/', '_', '../'.ARTIKULUAK_KARPETA.$_POST['saila'].'/'.$_POST['izenburua'].'.html');
+>>>>>>> e14e7952ea105ce15fd5bfa5f8a621370b027384
 
-		
+		file_put_contents($path, $contenido);
 		
 	    save_formated($artikuluak, "../".EZ_ARTIKULUAK);
 
