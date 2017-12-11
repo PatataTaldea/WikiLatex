@@ -36,4 +36,10 @@
     <password>patata</password>
     <type>user</type>
   </erabiltzaile>
+  <erabiltzaile>
+    <username>egonichan</username>
+    <email>ego@chan.com</email>
+    <password>ego</password>
+    <type>user</type>
+  </erabiltzaile>
 </erabiltzaileak>

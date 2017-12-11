@@ -181,19 +181,27 @@ function iruzkindu(){
      } else {
         // code for old IE browsers
         xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    } 
-
-    // Erantzuna tratatu
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            idatziOrria("Iruzkinak");
-        }
     }
 
-    // AJAX eskeara osatu eta bidali
-    xhttp.open("POST", "functions/newIruzkin.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("name="+izena.value+"&email="+eposta.value+"&text="+mezua.value);
+    var response_alert = document.getElementById('response_alert');
+    if(!required()){
+        response_alert.style = "";
+        response_alert.className = "alert alert-danger";
+        response_alert.innerHTML = "Sartu datuak!";
+    }
+    else{
+        // Erantzuna tratatu
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                idatziOrria("Iruzkinak");
+            }
+        }
+
+        // AJAX eskeara osatu eta bidali
+        xhttp.open("POST", "functions/newIruzkin.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("name="+izena.value+"&email="+eposta.value+"&text="+mezua.value);
+    }
 }
 
 function idatziArtikulua( orria_izena, orria_saila ){
@@ -236,3 +244,12 @@ function idatziArtikulua( orria_izena, orria_saila ){
 
 }
 
+function required(){ 
+    var izena = document.getElementById('name');
+    var mezua = document.getElementById('text');
+
+    if (izena.value.length == 0 || mezua.value.length == 0){         
+         return false; 
+    }       
+    return true;   
+}

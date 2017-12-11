@@ -7,29 +7,30 @@
           <?php if(isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']==true){ ?>
             <input type="name" readonly class="form-control" id="name" value="<?php echo $_SESSION['erabiltzailea']; ?>">
           <?php } else { ?>
-            <input type="name" class="form-control" id="name" placeholder="Idatzi izen bat" required>
+            <input type="name" class="form-control" id="name" placeholder="Idatzi izen bat">
           <?php } ?>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputText">Emaila</label>
           <?php if(isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']==true){ ?>
+            <label for="inputText">Emaila</label>
             <input type="email" readonly class="form-control" id="email" value="<?php echo $_SESSION['erab_email']; ?>">
-          <?php } else { ?>
-            <input type="email" class="form-control" id="email" placeholder="Idatzi zure emaila" required>
+            <?php } else { ?>
+            <input type="email" class="form-control" id="email" value="-" style="display: none">
           <?php } ?>
         </div>
       </div>
       <div class="form-group">
         <label for="inputText">Iruzkina</label>
-        <input type="text" class="form-control" id="text" placeholder="Idatzi zerbait" required>
+        <input type="text" class="form-control" id="text" placeholder="Idatzi zerbait">
       </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" required>Webguneko baldintzak onartzen ditut
-        </label>
+      <div>
+          <button type="button" class="btn btn-primary" onclick="iruzkindu()">Iruzkindu!</button>
       </div>
-      <div><button type="button" class="btn btn-primary" onclick="iruzkindu()">Iruzkindu!</button></div>
     </form>
+    <br></br>
+    <div id="response_alert" class="alert alert-primary" role="alert" style="display: none">
+      This is a primary alert—check it out!
+    </div>
     <br></br>
     <div>
       <table class="table">
