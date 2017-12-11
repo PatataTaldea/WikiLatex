@@ -1,5 +1,7 @@
   function artikuluBerri() {
+
     var response_alert = document.getElementById('response_alert');
+    //Datuak sartu direla zihurtatu
     if(!required()){
         response_alert.style = "";
         response_alert.className = "alert alert-danger";
@@ -7,11 +9,10 @@
     }
     else{
         
+        //Datuak lortu
         var data = CKEDITOR.instances.text.getData();
-       
         var sailaList = document.getElementById('saila');
         var saila = sailaList.options[sailaList.selectedIndex].text;
-
         var izenburua = document.getElementById('izenburua');
         var hitzGakoak = document.getElementById('hitzGako').value;
         var deskribapena = document.getElementById('deskribapena').value;
@@ -58,16 +59,16 @@
     
   }
 
-   
-  function required()   { 
+
+//Derrigorezko datuak sartu diren ikusi
+function required()   { 
     var izenburua = document.getElementById('izenburua').value;
     var data = CKEDITOR.instances.text.getData();
     var hitzGakoak = document.getElementById('hitzGako').value;
     var deskribapena = document.getElementById('deskribapena').value;
 
-     if (izenburua.length == 0 || hitzGakoak.length ==0 || data.length ==0 || deskribapena.length == 0)  
-      {         
-         return false; 
-      }       
+    if (izenburua.length == 0 || hitzGakoak.length ==0 || data.length ==0 || deskribapena.length == 0){         
+        return false; 
+    }       
       return true;   
-    } 
+} 

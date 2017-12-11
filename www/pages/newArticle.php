@@ -5,35 +5,29 @@
 	<title>Artikulu Berria</title>
 	<script src="modules/ckeditor/ckeditor.js"></script>
 	<script src="js/sample.js"></script>
-	<script src="js/prueba.js"></script>
+	<script src="js/artBerri.js"></script>
 	<script src="modules/ckeditor/ckeditor.js"></script>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
 </head>
 <body id="main">
-
 <main>
-	
 	<div style="padding:35px">
 		<h1>Artikulu berria:</h1>
 		<br>
 		<form data-toggle="validator" role="form">
+
 			<div class="form-row ">
+				<!--IZENBURUA-->
 				<div class="col">
 					<label class="control-label" for="izenburua">Izenburua:</label>
 					<input type="text" class="form-control" id="izenburua" required="required">
 				</div>
+				<!--SAILA-->
 				<div class="col">
 					<label class="mr-sm-2" for="inputState">Saila:</label>
 					<select class="form-control"  id="saila">
-	    	    	
 	    	    		<?php 
-	    	    		
-
 	    	    			$sailak=simplexml_load_file('../data/artikuluak/sailak.xml')or die("Error: Cannot create object");
-	    	    	
-	    	   
 	    	    			 			foreach ($sailak->saila as $saila) {
 	    	    				echo('<option>'.$saila.'</option>');
 	    	    			}
@@ -41,7 +35,7 @@
 	    			</select>
 				</div>
 			</div>
-			
+			<!--HITZ GAKOAK-->
 			<div class="form-row" >
 				<div class="col">
 					<label class="control-label" for="hitzGako">Hitz gakoak: (koma bidez banandu)</label>
@@ -49,7 +43,7 @@
 				</div>
 					
 			</div>
-
+			<!--DESKRIBAPENA-->
 			<div class="form-row" >
 				<div class="col">
 					<label class="control-label" for="deskribapena">Deskribapena:</label>
@@ -57,33 +51,28 @@
 				</div>
 					
 			</div>
-		
+
 		</form>
     	<br>
-
+    	<!--EDITOREA-->
 		<textarea name="_Text" id="text" style="border: 1px solid gray; width: 600px; height: 250px;"></textarea>
-   <script type='text/javascript'>
-    CKEDITOR.replace('_Text', { toolbar : [['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], ['Bold','Italic','Format','Font','FontSize'],['Source'] ] , width:"auto",height:"auto"});
-
-
-  </script>
-
-
+  			<script type='text/javascript'>
+    			CKEDITOR.replace('_Text', { toolbar : [['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], ['Bold','Italic','Format','Font','FontSize'],['Source'] ] , width:"auto",height:"auto"});	
+  			</script>
+  		<!--BIDALI BOTOIA-->
 		<div style=" margin-top:10px; float: right;">
-			
 			<button type="button" id="bidali" class="btn btn-dark" onclick="artikuluBerri()">Bidali</button>
 		</div>	
    		
 		<br>
 		<br>
 		<br>
-                    <div id="response_alert" class="alert alert-primary" role="alert" style="display: none">
-                        This is a primary alert—check it out!
-                    </div>
+		<!--ALERTAK-->
+        <div id="response_alert" class="alert alert-primary" role="alert" style="display: none">
+            This is a primary alert—check it out!
+        </div>
 	
 	</div>
-
-	
 
 </body>
 </html>
