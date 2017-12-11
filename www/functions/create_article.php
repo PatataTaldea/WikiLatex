@@ -3,9 +3,9 @@ session_start();
 require '../config.php';
 require 'xml_functions.php';
 
-// http://localhost:8888/WikiLatex/www/functions/create_article.php?editor=a?izenburua=a?hitzGakoak=a&deskribapena=a&saila=a
+// http://localhost:8888/WikiLatex/www/functions/create_article.php?editor=a&izenburua=a&hitzGakoak=a&deskribapena=a&saila=Nondik hasi
 
-
+error_reporting(E_ERROR | E_PARSE);
 if (isset($_POST['editor']) ){
 
 	//Fitxategiak kargatu
