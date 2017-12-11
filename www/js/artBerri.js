@@ -43,7 +43,7 @@
                     response_alert.innerHTML = "Izenburu hori duen artikulua existitzen da dagoeneko";
                 }else{
                      response_alert.className = "alert alert-danger";
-                    response_alert.innerHTML = "Barkatu, errorerenbat egon da";                   
+                    response_alert.innerHTML = "Barkatu, erroreren bat egon da";                   
                 }
 
                 

@@ -68,4 +68,17 @@
     <idazlea>urragorospe@hotmail.com</idazlea>
     <idazlea_izena>Maite</idazlea_izena>
   </artikuloa>
+  <artikuloa>
+    <izenburua>Paragrafoen egituraketa</izenburua>
+    <saila>Ohiko elementuak</saila>
+    <deskribapena>Paragrafoak, hutsuneak, lerro-jauziak eta abar erabiltzen ikasteko gida azkarra</deskribapena>
+    <hitzgakoak>
+      <hitza>paragrafo</hitza>
+      <hitza>lerro</hitza>
+      <hitza>hutsune</hitza>
+    </hitzgakoak>
+    <idazlea>ego@chan.com</idazlea>
+    <idazlea_izena>egonichan</idazlea_izena>
+    <textua>Ohiko_elementuak/Paragrafoen egituraketa.html</textua>
+  </artikuloa>
 </artikuloak>
