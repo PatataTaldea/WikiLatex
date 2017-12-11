@@ -381,7 +381,7 @@ function sortuSaila() {
     var saila = document.getElementById('sailBerria').value;
     var alert_emaitza = document.getElementById('sailaSortuEmaitza');
     
-    if (saila == "" || saila.length < 3 || saila.length > 12) {
+    if (saila == "" || saila.length < 3 || saila.length > 20) {
         alert_emaitza.style.display = "block";
         alert_emaitza.className = "alert alert-danger";
         alert_emaitza.innerHTML = "Sartutako balioa ez da egokia."
