@@ -46,7 +46,7 @@ if (isset($_POST['editor']) ){
 		}
 		
 
-		$contenido = $_GET['editor'];
+		$contenido = $_POST['editor'];
 
 		$sail = preg_replace('/\s+/', '_', $_POST['saila']);
 		$izenb = preg_replace('/\s+/', '_', $_POST['izenburua']);

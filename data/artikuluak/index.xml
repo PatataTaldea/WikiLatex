@@ -68,4 +68,18 @@
     <idazlea>urragorospe@hotmail.com</idazlea>
     <idazlea_izena>Maite</idazlea_izena>
   </artikuloa>
+  <artikuloa>
+    <izenburua>LaTeX dokumentu baten egitura.</izenburua>
+    <saila>Nondik hasi</saila>
+    <deskribapena>Nola sortu LaTeX dokumentu bat.</deskribapena>
+    <hitzgakoak>
+      <hitza>LaTeX</hitza>
+      <hitza> dokumentu</hitza>
+      <hitza> egitura</hitza>
+      <hitza> globala</hitza>
+    </hitzgakoak>
+    <idazlea>osainz59@gmail.com</idazlea>
+    <idazlea_izena>Oscar</idazlea_izena>
+    <textua>Nondik_hasi/LaTeX dokumentu baten egitura..html</textua>
+  </artikuloa>
 </artikuloak>

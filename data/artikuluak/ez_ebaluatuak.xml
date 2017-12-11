@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artikuloak>
-  
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>a</hitza>
+    </hitzgakoak>
+    <izenburua>a</izenburua>
+    <deskribapena>a</deskribapena>
+    <saila>Nondik hasi</saila>
+    <idazlea_izena>Oscar</idazlea_izena>
+    <idazlea>osainz59@gmail.com</idazlea>
+    <textua>Nondik_hasi/a.html</textua>
+  </artikuloa>
 </artikuloak>

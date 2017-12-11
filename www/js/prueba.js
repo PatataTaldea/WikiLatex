@@ -45,7 +45,6 @@
                     response_alert.innerHTML = "Barkatu, errorerenbat egon da";                   
                 }
 
-                response_alert.innerHTML = this.responseText;
                 
             }
         }
