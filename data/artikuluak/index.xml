@@ -41,6 +41,7 @@
     <idazlea_izena>osainz59</idazlea_izena>
     <textua>Ikur_matematikoak/Alfa.html</textua>
   </artikuloa>
+<<<<<<< HEAD
     <artikuloa>
     <izenburua>Batukari eta biderkaria</izenburua>
     <saila>Ikur matematikoak</saila>
@@ -48,12 +49,25 @@
     <hitzgakoak>
       <hitza>batukari</hitza>
       <hitza>biderkari</hitza>
+=======
+  <artikuloa>
+    <izenburua>Omega</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <deskribapena>Omega ikurraren artikuloa.</deskribapena>
+    <hitzgakoak>
+      <hitza>omega</hitza>
+      <hitza>o</hitza>
+>>>>>>> 37d095672fa95f5bed84bd4e6ab56e6cf5e00287
       <hitza>ikurra</hitza>
       <hitza>ikur</hitza>
       <hitza>matematikoa</hitza>
     </hitzgakoak>
     <idazlea>osainz59@gmail.com</idazlea>
     <idazlea_izena>osainz59</idazlea_izena>
+<<<<<<< HEAD
     <textua>Ikur_matematikoak/Batukari eta biderkaria.html</textua>
+=======
+    <textua>Ikur_matematikoak/Omega.html</textua>
+>>>>>>> 37d095672fa95f5bed84bd4e6ab56e6cf5e00287
   </artikuloa>
 </artikuloak>

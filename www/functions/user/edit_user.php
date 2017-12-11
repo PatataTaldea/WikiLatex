@@ -18,30 +18,36 @@ session_start();
 require '../../config.php';
 require '../xml_functions.php';
 
+// Konprobatu sarrera eta sesioa.
 if (isset($_SESSION['logeatuta']) && $_SESSION['logeatuta']) {
     if (isset($_POST['pass_z']) && isset($_POST['pass_b'])){
         
+            // Konprobatu pasahitz zaharra.
             if ($_POST['pass_z'] != $_SESSION['erab_pass']){
-                echo '1';
+                echo '1'; // Jasotako pasahitz zaharra ez dator bat erabiltzailearen pasahitzarekin.
                 exit;
             }
         
+            // Konprobatu pasahitz berria
             if ($_POST['pass_z'] == $_POST['pass_b']){
-                echo '2';
+                echo '2'; // Jasotako pasahitz berria zaharraren berdina da.
                 exit;
             }
         
+            // Kargatu datu-basea
             $erabiltzaileak = simplexml_load_file("../../".ERABILTZAILEAK) or die("Error: Cannot create object");
             $pass = $erabiltzaileak->xpath("/erabiltzaileak/erabiltzaile[email='".$_SESSION['erab_email']."']/password");
         
+            // Eguneratu aldagaiak
             $pass[0][0] = $_POST['pass_b'];
             $_SESSION['erab_pass'] = $_POST['pass_b'];
         
+            // Gorde aldaketak
             save_formated($erabiltzaileak, "../../".ERABILTZAILEAK);
         
-            echo '0';
+            echo '0'; // Dena ondo joan bada eta erabiltzailea sortu badu.
         
-    } else echo '3';
-} else echo '4';
+    } else echo '3'; // Sartutako datu kopurua ez da egokia.
+} else echo '4'; // Sesioa ez dago irekita.
 
 ?>

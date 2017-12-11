@@ -38,7 +38,6 @@
 	    	    				echo('<option>'.$saila.'</option>');
 	    	    			}
 	    	    		?>
-	    	    		<option>Kontaktua</option>
 	    			</select>
 				</div>
 			</div>
