@@ -2,6 +2,7 @@
 <!ATTLIST artikuloak>
 <!ELEMENT artikuloa (izenburua, hitzgakoak, saila, idazlea)>
 <!ELEMENT izenburua (#PCDATA)>
+<!ELEMENT deskribapena (#PCDATA)>
 <!ELEMENT hitzgakoak (hitza)*>
 <!ATTLIST hitza>
 <!ELEMENT saila (#PCDATA)>

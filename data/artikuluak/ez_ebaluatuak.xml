@@ -5,24 +5,106 @@
       <hitza>a</hitza>
     </hitzgakoak>
     <izenburua>a</izenburua>
+    <deskribapena>b</deskribapena>
     <saila>Ikur matematikoak</saila>
     <idazlea_izena>asdfas</idazlea_izena>
     <idazlea>a@gmail.com</idazlea>
     <textua>Ikur_matematikoak/a.html</textua>
   </artikuloa>
-    <artikuloa>
-    <izenburua>Omega</izenburua>
-    <saila>Ikur matematikoak</saila>
-    <deskribapena>Omega ikurraren artikuloa.</deskribapena>
+  <artikuloa>
     <hitzgakoak>
-      <hitza>omega</hitza>
-      <hitza>o</hitza>
-      <hitza>ikurra</hitza>
-      <hitza>ikur</hitza>
-      <hitza>matematikoa</hitza>
+      <hitza>fda</hitza>
     </hitzgakoak>
-    <idazlea>osainz59@gmail.com</idazlea>
-    <idazlea_izena>osainz59</idazlea_izena>
-    <textua>Ikur_matematikoak/Omega.html</textua>
+    <izenburua>fdsa</izenburua>
+    <deskribapena>fdsa</deskribapena>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/fdsa.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>fd</hitza>
+    </hitzgakoak>
+    <izenburua>fdf</izenburua>
+    <deskribapena>fd</deskribapena>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/fdf.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>fd</hitza>
+    </hitzgakoak>
+    <izenburua>asdf</izenburua>
+    <deskribapena>fdd</deskribapena>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/asdf.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>s</hitza>
+    </hitzgakoak>
+    <izenburua>ss</izenburua>
+    <deskribapena>s</deskribapena>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/ss.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>fdfdf</hitza>
+    </hitzgakoak>
+    <izenburua>fdsadfd</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/fdsadfd.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>baba</hitza>
+    </hitzgakoak>
+    <izenburua>baba</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/baba.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>ddd</hitza>
+    </hitzgakoak>
+    <izenburua>dd</izenburua>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/dd.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>ff</hitza>
+    </hitzgakoak>
+    <izenburua>fff</izenburua>
+    <deskribapena>ff</deskribapena>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/fff.html</textua>
+  </artikuloa>
+  <artikuloa>
+    <hitzgakoak>
+      <hitza>asdf</hitza>
+    </hitzgakoak>
+    <izenburua>asd</izenburua>
+    <deskribapena>asdfasdf</deskribapena>
+    <saila>Ikur matematikoak</saila>
+    <idazlea_izena>asdfas</idazlea_izena>
+    <idazlea>a@gmail.com</idazlea>
+    <textua>Ikur_matematikoak/asd.html</textua>
   </artikuloa>
 </artikuloak>

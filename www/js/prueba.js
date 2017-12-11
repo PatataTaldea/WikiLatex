@@ -3,7 +3,7 @@
     if(!required()){
         response_alert.style = "";
         response_alert.className = "alert alert-danger";
-        response_alert.innerHTML = "Sartu izenburu, hitz gakoak eta artikulua!";
+        response_alert.innerHTML = "Sartu izenburu, hitz gakoak, deskribapen eta artikulua!";
     }
     else{
         
@@ -14,9 +14,8 @@
 
         var izenburua = document.getElementById('izenburua');
         var hitzGakoak = document.getElementById('hitzGako').value;
+        var deskribapena = document.getElementById('deskribapena').value;
         var bidali = document.getElementById('bidali');
-
-       
 
          // Sortu AJAX eskaera
         if (window.XMLHttpRequest) {
@@ -41,7 +40,12 @@
                 } else if(erantzuna == 2){
                     response_alert.className = "alert alert-danger";
                     response_alert.innerHTML = "Izenburu hori duen artikulua existitzen da dagoeneko";
+                }else{
+                     response_alert.className = "alert alert-danger";
+                    response_alert.innerHTML = "Barkatu, errorerenbat egon da";                   
                 }
+
+                response_alert.innerHTML = this.responseText;
                 
             }
         }
@@ -49,7 +53,7 @@
         // AJAX eskeara osatu eta bidali
         xhttp.open("POST", "functions/create_article.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("izenburua="+izenburua.value+"&saila="+saila+"&hitzGakoak="+hitzGakoak+"&editor="+data);
+        xhttp.send("izenburua="+izenburua.value+"&saila="+saila+"&hitzGakoak="+hitzGakoak+"&deskribapena="+deskribapena+"&editor="+data);
         console.log(xhttp);
         }
     
@@ -60,8 +64,9 @@
     var izenburua = document.getElementById('izenburua').value;
     var data = CKEDITOR.instances.text.getData();
     var hitzGakoak = document.getElementById('hitzGako').value;
+    var deskribapena = document.getElementById('deskribapena').value;
 
-     if (izenburua.length == 0 || hitzGakoak.length ==0 || data.length ==0)  
+     if (izenburua.length == 0 || hitzGakoak.length ==0 || data.length ==0 || deskribapena.length == 0)  
       {         
          return false; 
       }       

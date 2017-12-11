@@ -50,13 +50,21 @@
 				</div>
 					
 			</div>
+
+			<div class="form-row" >
+				<div class="col">
+					<label class="control-label" for="deskribapena">Deskribapena:</label>
+					<input type="text" class="form-control"  id='deskribapena'  required="required">
+				</div>
+					
+			</div>
 		
 		</form>
     	<br>
 
 		<textarea name="_Text" id="text" style="border: 1px solid gray; width: 600px; height: 250px;"></textarea>
    <script type='text/javascript'>
-    CKEDITOR.replace('_Text', { toolbar : [['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], ['Bold','Italic','Format','Font','FontSize'] ] , contentsCss: "css/test.css" , width:"auto",height:"auto"});
+    CKEDITOR.replace('_Text', { toolbar : [['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], ['Bold','Italic','Format','Font','FontSize'],['Source'] ] , width:"auto",height:"auto"});
 
 
   </script>
