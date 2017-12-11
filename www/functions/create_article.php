@@ -38,12 +38,8 @@ if (isset($_POST['editor']) ){
 			$berria->addChild('idazlea',substr($_SESSION['erab_email'],0));
 		}
 		
-<<<<<<< HEAD
 
 		$contenido = $_POST['editor'];
-=======
-		$contenido = $_GET['editor'];
->>>>>>> d543d8be2f46ef0cd3ab297f1159b7128b94fe81
 
 		$sail = preg_replace('/\s+/', '_', $_POST['saila']);
 		$izenb = preg_replace('/\s+/', '_', $_POST['izenburua']);
